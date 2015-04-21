@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SecurityBox>
+    <Setting>
+        <dataloger ip="192.168.7.185" MAC="64:d8:14:8f:0:c9" port="1111">
+            <ip>192.168.7.185192.168.7.185</ip>
+            <port>12345</port>
+            <MAC>64:d8:14:8f:0:c964:d8:14:8f:0:c9</MAC>
+        </dataloger>
+        <pc MAC="d4:be:d9:c7:ae:50">
+            <MAC>d4:be:d9:c7:ae:50d4:be:d9:c7:ae:50</MAC>
+        </pc>
+        <AddressCommander>
+            <reboot>/api/$/system/reboot</reboot>
+            <getcrossings>/api/$/database/getCrossings</getcrossings>
+            <login>/api/auth/user</login>
+        </AddressCommander>
+    </Setting>
+</SecurityBox>

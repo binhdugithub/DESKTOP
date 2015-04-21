@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="350" key="DIALOG_WIDTH"/>
+		<item value="139" key="DIALOG_Y_ORIGIN"/>
+		<item value="476" key="DIALOG_HEIGHT"/>
+		<item value="911" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="this_thread" key="selection"/>
+		<list key="findhistory">
+			<item value="this_thread"/>
+			<item value="LoadConfig"/>
+			<item value="MyClass-&gt;mSocketDataloger"/>
+			<item value=" MyClass-&gt;mSocketDataloger"/>
+			<item value="WritePc:"/>
+			<item value="WritePc send"/>
+			<item value="GetMacAddress"/>
+			<item value="int flags = fcntl (sockPc, F_GETFL, 0);"/>
+		</list>
+		<list key="replacehistory">
+			<item value="mSocketWIM"/>
+			<item value="mSocketListener"/>
+			<item value="mSocketPc"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="310" key="DIALOG_Y_ORIGIN"/>
+		<item value="413" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

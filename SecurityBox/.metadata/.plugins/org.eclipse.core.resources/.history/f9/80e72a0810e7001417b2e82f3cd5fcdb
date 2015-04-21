@@ -1,0 +1,84 @@
+/*
+ * HandleTCPConnection.cpp
+ *
+ *  Created on: Apr 8, 2015
+ *      Author: binhdu
+ */
+
+#include "HandleTCPConnection.h"
+#include <iostream>
+#include <chrono>
+
+
+HandleTCPConnection::HandleTCPConnection()
+{
+	// TODO Auto-generated constructor stub
+	mIsRunning = true;
+	mHMainThread = new std::thread(MainThread, this);
+}
+
+HandleTCPConnection::~HandleTCPConnection()
+{
+	// TODO Auto-generated destructor stub
+	mIsRunning = false;
+	mHMainThread->join();
+
+	delete mHMainThread;
+	mHMainThread = NULL;
+
+	while(!mListTCPConnection.empty())
+	{
+		delete mListTCPConnection.front();
+		mListTCPConnection.erase(mListTCPConnection.begin());
+	}
+
+}
+
+
+void HandleTCPConnection::MainThread(void *param)
+{
+	HandleTCPConnection *MyClass = static_cast<HandleTCPConnection*>(param);
+	while(MyClass->mIsRunning)
+	{
+		MyClass->mListTCPConnectionMutex.lock();
+
+		for(int i = 0; i < MyClass->mListTCPConnection.size(); i++)
+		{
+			TCPConnection *MyTCP = MyClass->mListTCPConnection.at(i);
+
+			if(true)
+			{
+				delete (MyTCP);
+				MyClass->mListTCPConnection.erase(MyClass->mListTCPConnection.begin() + i);
+			}
+		}
+
+		MyClass->mListTCPConnectionMutex.unlock();
+
+		this_thread::sleep_for(std::chrono::milliseconds(5));
+	}
+
+	return;
+}
+
+void HandleTCPConnection::AddTCPConnection(TCPConnection *p_TCPConnection)
+{
+	if(p_TCPConnection)
+	{
+		mListTCPConnectionMutex.lock();
+		for(auto it = mListTCPConnection.begin(); it != mListTCPConnection.end(); it++)
+		{
+			if((*it) == p_TCPConnection)
+			{
+				mListTCPConnectionMutex.unlock();
+				return;
+			}
+		}
+
+		cout << __FILE__<< "(" << __LINE__ << ") Number of tcpconnections:" << mListTCPConnection.size() << endl;
+		mListTCPConnection.push_back(p_TCPConnection);
+		mListTCPConnectionMutex.unlock();
+
+		return;
+	}
+}

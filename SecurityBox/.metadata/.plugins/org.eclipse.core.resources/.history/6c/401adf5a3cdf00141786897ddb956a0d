@@ -1,0 +1,549 @@
+/*
+ * tcpconnection.cpp
+ *
+ *  Created on: Nov 7, 2012
+ *      Author: hungnv
+ */
+
+#include "TCPConnection.h"
+#include "HandleTCPConnection.h"
+#include <iostream>
+#include <string.h> // for all mem* routines
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netinet/tcp.h>
+#include <netinet/ip.h>
+#include <netdb.h>
+#include <sys/time.h>
+#include <sys/ioctl.h>
+#include <sys/epoll.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <pcap/pcap.h>
+#include <net/ethernet.h>
+#include <netinet/ether.h>
+#include <netinet/if_ether.h>
+#include <net/if.h>
+
+
+#include "tinyxml.h"
+#include "tinystr.h"
+
+
+
+#define FILE_CONFIG 	"./Resources/config.xml"
+#define MAXEVENTS 64
+using namespace std;
+
+TCPConnection::TCPConnection()
+	: mSocket(-1)
+	, mListener(~(0))
+	, mMainThreadTID(0)
+	, mRunningFlag(false)
+{
+
+}
+
+TCPConnection::TCPConnection(unsigned short port)
+	: mSocket(-1)
+	, mListener(~(0))
+	, mMainThreadTID(0)
+	, mRunningFlag(false)
+{
+	Create(port);
+}
+
+TCPConnection::TCPConnection(int copySocket)
+	: mSocket(copySocket)
+	, mListener(~(0))
+{
+	int flags;
+	int32_t nReuse = IPTOS_LOWDELAY;
+
+	setsockopt(mSocket, SOL_SOCKET, SO_REUSEADDR, (char*)&nReuse, sizeof(int32_t));
+	setsockopt(mSocket, IPPROTO_TCP, IP_TOS, &nReuse, sizeof(int32_t));
+
+	flags = fcntl (mSocket, F_GETFL, 0);
+	if (flags != -1)
+	{
+		flags |= O_NONBLOCK;
+		fcntl (mSocket, F_SETFL, flags);
+	}
+
+	mRunningFlag = true;
+	mIsDestroy = false;
+	mMainThreadTID = new std::thread(MainThread , this);
+}
+
+TCPConnection::~TCPConnection()
+{
+	//cout << __FILE__<< "(" << __LINE__ << ") Delete TCPconnection" << endl;
+	Close();
+}
+
+void TCPConnection::MainThread(void* arg)
+{
+	TCPConnection *MyClass = static_cast<TCPConnection*>(arg);
+
+	while(MyClass->mRunningFlag)
+	{
+		fd_set rfd; // read event
+		fd_set efd; // accept event
+		int retVal, nfds = 0;
+		timeval tv = { 0 };
+		tv.tv_usec = 1;
+
+
+		FD_ZERO(&rfd);
+		FD_ZERO(&efd);
+		FD_SET(MyClass->mSocket, &rfd);
+		//nfds = std::max(nfds, mSocket);
+		nfds = nfds > MyClass->mSocket ? nfds : MyClass->mSocket ;
+		FD_SET(MyClass->mSocket, &efd);
+		nfds = nfds > MyClass->mSocket ? nfds : MyClass->mSocket ;
+		// do something here
+
+		retVal = select(nfds + 1, &rfd, NULL, & efd, &tv);
+
+		if (retVal == -1 && errno == EINTR)
+			return ;
+
+		if (FD_ISSET(MyClass->mSocket, &efd))
+		{
+			char c;
+			retVal = recv(MyClass->mSocket, &c, 1, MSG_OOB);
+		}
+
+		if (FD_ISSET(MyClass->mListener, &rfd))
+		{
+			MyClass->OnAccept(MyClass->mListener);
+		}
+		else if (FD_ISSET(MyClass->mSocket, &rfd))
+		{
+			unsigned long n = 0;
+			if(ioctl(MyClass->mSocket, FIONREAD, &n) < 0)
+				return ;
+
+			if(0 == n)
+			{
+				//MyClass->OnClose(MyClass->mSocket);
+				MyClass->SetIsDestroy(true);
+			}
+			else
+			{
+				//std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Receive message with leng: " << n << std::endl;
+				MyClass->OnRead(n);
+			}
+		}
+	}
+}
+
+
+bool TCPConnection::Create(unsigned short port)
+{
+	struct sockaddr_in addr;
+	int ret, flags;
+	int32_t nReuse = IPTOS_LOWDELAY;
+
+	Close();
+
+	mSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
+	if(-1 == mSocket)
+		return false;
+
+	setsockopt(mSocket, SOL_SOCKET, SO_REUSEADDR, (char*)&nReuse, sizeof(int32_t));
+	setsockopt(mSocket, IPPROTO_TCP, IP_TOS, &nReuse, sizeof(int32_t));
+
+	flags = fcntl (mSocket, F_GETFL, 0);
+	if (flags != -1)
+	{
+		flags |= O_NONBLOCK;
+		fcntl (mSocket, F_SETFL, flags);
+	}
+
+	memset(&addr, 0, sizeof(addr));
+	addr.sin_family = AF_INET;
+	addr.sin_port   = htons(port);
+
+	ret = bind(mSocket, (__CONST_SOCKADDR_ARG)&addr, sizeof(addr));
+	if(ret < 0)
+	{
+		cout << __FILE__<< "(" << __LINE__ << ") Bind socket got error!" << endl;
+		return false;
+	}
+
+	return true;
+}
+
+void TCPConnection::Close()
+{
+	if(mSocket != -1) // socket was opened
+	{
+		//cout << __FILE__<< "(" << __LINE__ << ") Close socket 1 !" << endl;
+		if(0 != mMainThreadTID)
+		{
+			//cout << __FILE__<< "(" << __LINE__ << ") Close socket 2 !" << endl;
+			mRunningFlag = false;
+			mMainThreadTID->join();
+			mMainThreadTID = 0;
+		}
+
+		//cout << __FILE__<< "(" << __LINE__ << ") Close socket 3 !" << endl;
+		close(mSocket);
+		mSocket = -1;
+	}
+}
+
+bool TCPConnection::Listen()
+{
+	//cout << __FILE__<< "(" << __LINE__ << ") Listen!" << endl;
+	if(listen(mSocket, 5) < 0)
+		return false;
+
+
+	mListener = mSocket;
+
+	return true;
+}
+
+void TCPConnection::Start()
+{
+	//cout << __FILE__<< "(" << __LINE__ << ") Start mainthread!" << endl;
+	mRunningFlag = true;
+	mIsDestroy = false;
+	mMainThreadTID = new std::thread(MainThread , this);
+}
+
+bool TCPConnection::ConnectTo(const char* server_addr, unsigned short server_port)
+{
+	struct sockaddr_in server_address;
+	unsigned int l;
+	memset(&server_address, 0, l = sizeof(server_address));
+
+	server_address.sin_family = AF_INET;
+
+	if(!inet_aton(server_addr, (struct in_addr *) &server_address.sin_addr.s_addr))
+		return false;
+
+	server_address.sin_port = htons(server_port);
+
+	return connect(mSocket, (struct sockaddr *) &server_address, l) != -1;
+}
+
+TCPConnection* TCPConnection::Accept(int p_socket)
+{
+	//std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Entry point !" << std::endl;
+
+	struct sockaddr_in client_address;
+	unsigned int l;
+	int ret;
+	memset(&client_address, 0, l = sizeof(client_address));
+	//client_address.sin_port = htons(port);
+	ret = accept(p_socket, (struct sockaddr *) &client_address, &l);
+
+	if(ret < 0)
+	{
+		std::cout << __FILE__<< "(" << __LINE__ << ") [Accept] accept error !" << std::endl;
+		return NULL;
+	}
+	else
+	{
+		char ip[INET_ADDRSTRLEN];
+		inet_ntop(AF_INET, &client_address.sin_addr.s_addr, ip, INET_ADDRSTRLEN);
+		std::cout << __FILE__<< "(" << __LINE__ << ") IP: "<< ip << std::endl;
+
+		memset(MACPc,0,sizeof(MACPc));
+		GetMacAddress(ip);
+		bool true_false = IsCorrectMACPc();
+		if(true_false)
+		{
+			printf("\nTao connection voi PC");
+			return new TCPConnection(ret);
+		}
+		else
+		{
+			printf("\nMac Address: %s khong hop le\n", MACPc);
+			return NULL;
+		}
+	}
+
+	return NULL;
+}
+
+bool TCPConnection::IsCorrectMACPc()
+{
+	printf("\nVao 1");
+	TiXmlDocument doc("config.xml");
+
+	if(!doc.LoadFile())
+	{
+		printf("\nVao 2");
+		doc.Clear();
+		return false ;
+	}
+
+	//load file config successful ad read information!!!
+	TiXmlElement *eRoot = doc.RootElement(); // Bat2Chu
+	TiXmlElement *eSetting = eRoot->FirstChildElement("Setting") ;
+
+	TiXmlElement *ePC = eSetting->FirstChildElement("pc") ;
+
+	//get network information
+	const char* l_macpc = ePC->FirstChildElement("MAC")->FirstChild()->Value();
+
+
+	printf("\nMac config: %s", l_macpc);
+	printf("\nMac pc: %s", l_macpc);
+	if(strcmp(MACPc,l_macpc) == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+	doc.Clear();
+	return false;
+}
+
+int TCPConnection::Read(void* buffer, int buffer_len)
+{
+	return recv(mSocket, (char*)buffer, buffer_len, 0);
+}
+
+int TCPConnection::Write(const void* buffer, int buffer_len)
+{
+	//if(buffer_len < 1024)
+	{
+		return send(mSocket, (const char*)buffer, buffer_len, 0);
+	}
+
+	/*uint32_t total_len_sent = 0;
+	uint32_t len_temp_sent = 0;
+	uint32_t len_last = buffer_len;
+
+	while(total_len_sent < buffer_len)
+	{
+		len_temp_sent = send(mSocket, (const char*)(buffer + total_len_sent) , len_last, 0);
+		if(len_temp_sent < 0)
+			return -1;
+		else
+		{
+			total_len_sent += len_temp_sent;
+			len_last -= total_len_sent;
+		}
+	}
+
+	return total_len_sent;
+	*/
+
+}
+
+
+void TCPConnection::OnRead(int pLeng)
+{
+	static unsigned char *buffer;
+	static int numRead = 0;
+	static volatile bool isFinishedRead = true;
+	static int32_t pktLength = 0;
+
+
+	if(isFinishedRead)
+	{
+		//Read header of message
+		/*if(pLeng < sizeof(int32_t))
+			return ;
+		unsigned char header[4];
+		int32_t ret = Read(header, sizeof(header));
+		if(ret < sizeof(header))
+			return;
+
+
+		if(header[0] != 3 || header[1] != 0)
+		{
+			std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Check header[] fail" << pktLength << std::endl;
+			return;
+		}
+
+		pktLength = ((header[2] << 8) | (header[3]));
+		*/
+
+		pktLength = pLeng;
+		if(pktLength < 0)
+		{
+			std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Leng of package less than 0" << pktLength << std::endl;
+			return;
+		}
+
+		//Read data of message
+		if(buffer)
+		{
+			delete buffer;
+			buffer = NULL;
+		}
+
+		buffer = (unsigned char*)malloc(pktLength * sizeof(unsigned char));
+		if(!buffer)
+		{
+			buffer = (unsigned char*)malloc(pktLength * sizeof(unsigned char));
+			if(!buffer)
+			{
+				std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Init buffer to receive data fail" << numRead << std::endl;
+				return;
+			}
+		}
+
+		numRead = 0;
+		int ret = Read(buffer + numRead , pktLength - numRead);
+		if(ret < 0)
+		{
+			isFinishedRead = false;
+			std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Receiving message fail :" << numRead << std::endl;
+			return;
+		}
+
+		numRead += ret;
+		if(numRead == pktLength)
+		{
+			isFinishedRead = true;
+			printf("%s", (const char*)buffer);
+			//PushMsg((const char*)buffer);
+			std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Received leng :" << numRead << std::endl;
+		}
+		else
+		{
+			isFinishedRead = false;
+		}
+
+	}
+	else
+	{
+		int32_t ret = Read(buffer + numRead , pktLength - numRead);
+		if(ret < 0)
+		{
+			isFinishedRead = false;
+			std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Receiving message fail :" << numRead << std::endl;
+			return;
+		}
+
+		numRead += ret;
+		if(numRead == pktLength)
+		{
+			isFinishedRead = true;
+			//PushMsg((const char*)buffer);
+			printf("%s", (const char*)buffer);
+			std::cout << __FILE__ << " on line: " << __LINE__ << " [" << __func__<< "]" << "Received leng :" << numRead << std::endl;
+		}
+	}
+}
+void TCPConnection::OnAccept(int thisSocket)
+{
+	//cout << __FILE__<< "(" << __LINE__ << ") Onaccept !" << endl;
+	HandleTCPConnection::getSingletonPtr()->AddTCPConnection(Accept(thisSocket));
+}
+void TCPConnection::OnClose(int thisSocket)
+{
+	Close();
+}
+
+
+
+void TCPConnection::find_eth_addr(/*struct in_addr *search_ip*/u_char* userData, const struct pcap_pkthdr* pkthdr, const u_char *packet)
+{
+	TCPConnection *MyClass = (TCPConnection*)userData;
+	struct ether_header *eth_hdr = (struct ether_header *)packet;
+
+	if (ntohs(eth_hdr->ether_type) == ETHERTYPE_IP)
+	{
+		struct ip *ip_hdr = (struct ip *)(packet + sizeof(struct ether_header));
+		if (ip_hdr->ip_dst.s_addr == MyClass->search_ip.s_addr)
+		{
+			MyClass->print_eth_addr(eth_hdr->ether_dhost);
+		};
+
+		if (ip_hdr->ip_src.s_addr == MyClass->search_ip.s_addr)
+		{
+			MyClass->print_eth_addr(eth_hdr->ether_shost);
+		};
+	}
+}
+
+
+void TCPConnection::print_eth_addr(void *addr)
+{
+	if(strlen(MACPc) < strlen("AA:BB:CC:DD:EE:FF"))
+	{
+		strcpy(MACPc, ether_ntoa((struct ether_addr *)addr));
+	}
+
+	kill(child_pid, 9);
+	//exit(0);
+}
+
+
+char* TCPConnection::GetMacAddress(char *ip)
+{
+	child_pid = 0;
+	const char *dev;
+	char errbuf[PCAP_ERRBUF_SIZE];
+	pcap_t* descr;
+	bpf_u_int32 maskp, netp;
+
+	if (!(dev = pcap_lookupdev(errbuf)))
+	{
+		printf("%s\n", errbuf);
+		return NULL;
+	}
+	else
+	{
+		dev = "eth0";
+	}
+
+	pcap_lookupnet(dev,&netp,&maskp,errbuf);
+
+	if (!(descr = pcap_open_live(dev, BUFSIZ, 1, -1, errbuf)))
+	{
+		printf("pcap_open_live(): %s\n", errbuf);
+		return NULL;
+	}
+
+	if (!inet_aton(ip, &search_ip))
+	{
+		fprintf(stderr, "bad ip\n");
+		exit(1);
+	}
+
+	int pid = fork();
+
+	if (pid == 0)
+	{
+		while (1)
+		{
+			struct sockaddr_in sin;
+			sin.sin_family = PF_INET;
+			inet_aton(ip, &sin.sin_addr);
+			sin.sin_port = htons(1);
+			int s = socket(PF_INET, SOCK_STREAM, 0);
+			connect(s, (struct sockaddr *)&sin, sizeof(sin));
+			usleep(100000);
+		};
+	}
+	else
+	{
+
+		child_pid = pid;
+		pcap_loop(descr, 5, (pcap_handler)find_eth_addr, (u_char *)this);
+	}
+
+	return 0;
+}
+
+

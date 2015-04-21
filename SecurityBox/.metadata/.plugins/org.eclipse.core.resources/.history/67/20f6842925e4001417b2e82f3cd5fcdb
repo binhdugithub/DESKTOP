@@ -1,0 +1,271 @@
+/*
+ * HandleMACAddressTable.cpp
+ *
+ *  Created on: Apr 16, 2015
+ *      Author: binhdu
+ */
+
+#include "HandleMACAddressTable.h"
+
+HandleMACAddressTable::HandleMACAddressTable()
+{
+	LoadConfig();
+
+}
+
+HandleMACAddressTable::~HandleMACAddressTable()
+{
+
+}
+
+
+void HandleMACAddressTable::Start()
+{
+	int i;
+	char *dev;
+	char *dev2;
+	char errbuf[PCAP_ERRBUF_SIZE];
+	pcap_t* descr;
+	const u_char *packet;
+	struct pcap_pkthdr hdr;
+	struct ether_header *eptr;    /* net/ethernet.h */
+	struct bpf_program fp;        /* hold compiled program */
+	bpf_u_int32 maskp;            /* subnet mask */
+	bpf_u_int32 netp;             /* ip */
+
+	/* Now get a device */
+	dev = pcap_lookupdev(errbuf);
+	//dev = pcap_lookupdev(errbuf);
+
+	pcap_if_t  *alldevsp;
+
+	if (pcap_findalldevs (&alldevsp, errbuf) < 0)
+	{
+		fprintf (stderr, "%s", errbuf);
+		exit (1);
+	}
+
+	while (alldevsp != NULL)
+	{
+		printf ("%s\n", alldevsp->name);
+		alldevsp = alldevsp->next;
+	};
+
+
+	if(dev == NULL)
+	{
+		fprintf(stderr, "%s\n", errbuf);
+		exit(1);
+	}
+	else
+	{
+		printf("\nName dev: %s", dev);
+	}
+
+	/* Get the network address and mask */
+	strcpy(dev,"eth0");
+	pcap_lookupnet(dev, &netp, &maskp, errbuf);
+
+	/* open device for reading in promiscuous mode */
+	descr = pcap_open_live(dev, BUFSIZ, 1,-1, errbuf);
+	if(descr == NULL)
+	{
+		printf("pcap_open_live(): %s\n", errbuf);
+		exit(1);
+	}
+
+	/* Now we'll compile the filter expression*/
+	if(pcap_compile(descr, &fp, "ip", 0, netp) == -1)
+	{
+		fprintf(stderr, "Error calling pcap_compile\n");
+		exit(1);
+	}
+
+	/* set the filter */
+	if(pcap_setfilter(descr, &fp) == -1)
+	{
+		fprintf(stderr, "Error setting filter\n");
+		exit(1);
+	}
+
+	/* loop for callback function */
+	pcap_loop(descr, -1, (pcap_handler)Another_Callback, (u_char*)this);
+
+	return;
+}
+
+
+
+void HandleMACAddressTable::Another_Callback(u_char *arg, const struct pcap_pkthdr* pkthdr,const u_char* packet)
+{
+	//return;
+
+	const struct ip* ip;
+	u_int length = pkthdr->len;
+	u_int hlen,off,version;
+
+	int len;
+
+	/* jump pass the ethernet header */
+	ip = (struct ip*)(packet + sizeof(struct ether_header));
+	length -= sizeof(struct ether_header);
+
+	/* check to see we have a packet of valid length */
+	if (length < sizeof(struct my_ip))
+	   return ;
+
+	//len     = ntohs(ip->ip_len);
+	//hlen    = IP_HL(ip); /* header length */
+	//version = IP_V(ip);/* ip version */
+
+	/* check version */
+	//if(version != 4)
+	 //return ;
+
+
+	HandleMACAddressTable *MyClass = static_cast<HandleMACAddressTable*>((void*)arg);
+
+	//1. Tim dia chi nguon va dich
+	struct ether_header *eth_hdr = (struct ether_header*)packet;
+	if(ntohs(eth_hdr->ether_type) == ETHERTYPE_IP)
+	{
+		const char* l_macdst = ether_ntoa((struct ether_addr*) eth_hdr->ether_dhost);
+		const char* l_macsrc = ether_ntoa((struct ether_addr*) eth_hdr->ether_shost);
+		printf("MACDST: %s\n", l_macdst);
+		printf("MACSRC: %s\n", l_macsrc);
+
+		char ipc[INET_ADDRSTRLEN];
+		inet_ntop(AF_INET, &ip->ip_dst.s_addr, ipc, INET_ADDRSTRLEN);
+
+
+		if(strcmp(l_macdst, MyClass->mMACDataloger) == 0)
+		{
+			off = ntohs(ip->ip_off);
+			if((off & 0x1fff) == 0 )
+			{
+				MyClass->mIPDatalogerMutex.lock();
+				strcpy(MyClass->mIPDataloger, inet_ntoa(ip->ip_dst));
+				MyClass->mIPDatalogerMutex.unlock();
+
+				//printf("%s\n",ipc);
+			}
+		}
+		else if(strcmp(l_macdst, MyClass->mMACWIM) == 0)
+		{
+			off = ntohs(ip->ip_off);
+			if((off & 0x1fff) == 0 )
+			{
+				MyClass->mIPWIMMutex.lock();
+				strcpy(MyClass->mIPWIM, inet_ntoa(ip->ip_dst));
+				MyClass->mIPWIMMutex.unlock();
+
+				//printf("%s\n",ipc);
+			}
+		}
+
+
+		//char ipc[INET_ADDRSTRLEN];
+		inet_ntop(AF_INET, &ip->ip_src.s_addr, ipc, INET_ADDRSTRLEN);
+		if(strcmp(l_macsrc,MyClass-> mMACDataloger) == 0)
+		{
+			off = ntohs(ip->ip_off);
+			if((off & 0x1fff) == 0 )
+			{
+				MyClass->mIPDatalogerMutex.lock();
+				strcpy(MyClass->mIPDataloger, inet_ntoa(ip->ip_src));
+				MyClass->mIPDatalogerMutex.unlock();
+
+				//printf("%s\n",ipc );
+			}
+		}
+		else if(strcmp(l_macsrc, MyClass->mMACWIM) == 0)
+		{
+			off = ntohs(ip->ip_off);
+			if((off & 0x1fff) == 0 )
+			{
+				MyClass->mIPWIMMutex.lock();
+				strcpy(MyClass->mIPWIM, inet_ntoa(ip->ip_src));
+				MyClass->mIPWIMMutex.unlock();
+
+				//printf("%s\n",ipc );
+			}
+
+		}
+
+		printf("----------------------------------------------------\n");
+
+	}
+
+}
+
+
+
+bool HandleMACAddressTable::PassSecurityWIMIP(const char* p_wimip)
+{
+	bool true_false = false;
+	mIPWIMMutex.lock();
+	if(strcmp(mIPWIM, p_wimip) == 0)
+	{
+		true_false = true;
+	}
+	else
+	{
+		true_false = false;
+	}
+	mIPWIMMutex.unlock();
+
+	return true_false;
+}
+
+bool HandleMACAddressTable::PassSecurityDatalogerIP(const char* p_datalogerip)
+{
+	bool true_false = false;
+	mIPDatalogerMutex.lock();
+
+	if(strcmp(mIPDataloger, p_datalogerip) == 0)
+	{
+		true_false = true;
+	}
+	else
+	{
+		true_false = false;
+	}
+
+	mIPDatalogerMutex.unlock();
+
+	return true_false;
+}
+
+void HandleMACAddressTable::LoadConfig()
+{
+	memset(mMACDataloger,0,20);
+	memset(mMACWIM,0,20);
+
+	TiXmlDocument doc("config.xml");
+
+	if(!doc.LoadFile())
+	{
+		std::cout << __FILE__<< "(" << __LINE__ << ") " << __func__ << " load fail" << endl;
+		doc.Clear();
+		return;
+	}
+
+	TiXmlElement *eRoot = doc.RootElement(); // Bat2Chu
+	TiXmlElement *eSetting = eRoot->FirstChildElement("Setting");
+
+	TiXmlElement *eDataLoger = eSetting->FirstChildElement("dataloger");
+	TiXmlElement *ePC = eSetting->FirstChildElement("pc");
+
+	const char* temp3 = eDataLoger->FirstChildElement("MAC")->FirstChild()->Value();
+	const char* temp4 = ePC->FirstChildElement("MAC")->FirstChild()->Value();
+
+	strcpy(mMACDataloger,temp3);
+	strcpy(mMACWIM,temp4);
+
+	//printf("%s\n", mMACDataloger);
+	//printf("%s\n", mMACWIM);
+
+	doc.Clear();
+	return;
+}
+

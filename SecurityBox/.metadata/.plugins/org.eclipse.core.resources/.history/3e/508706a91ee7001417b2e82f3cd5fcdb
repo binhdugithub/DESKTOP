@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SecurityBox>
+    <Setting>
+        <dataloger ip="" MAC="64:d8:14:8f:0:c9" port="1111">
+        <pc ip="192.168.7.32">
+    </Setting>
+</SecurityBox>

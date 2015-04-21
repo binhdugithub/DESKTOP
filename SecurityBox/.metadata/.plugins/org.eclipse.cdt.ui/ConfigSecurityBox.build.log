@@ -1,0 +1,23 @@
+00:37:10 **** Incremental Build of configuration Debug for project ConfigSecurityBox ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Main.d" -MT"src/Main.d" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int SearchMac(const char*)’:
+../src/Main.cpp:129:7: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   dev = "eth0";
+       ^
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:184:55: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘short unsigned int*’ [-Wformat=]
+  printf("Port:          "); scanf("%d", &portDataloger);
+                                                       ^
+Finished building: ../src/Main.cpp
+ 
+Building target: ConfigSecurityBox
+Invoking: GCC C++ Linker
+g++  -o "ConfigSecurityBox"  ./src/Main.o ./src/tinystr.o ./src/tinyxml.o ./src/tinyxmlerror.o ./src/tinyxmlparser.o   -lpcap
+Finished building target: ConfigSecurityBox
+ 
+
+00:37:11 Build Finished (took 974ms)
+

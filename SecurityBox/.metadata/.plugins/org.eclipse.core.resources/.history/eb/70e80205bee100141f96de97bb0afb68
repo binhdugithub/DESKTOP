@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SecurityBox>
+	<Setting>
+	    <dataloger>
+	    	<ip>192.168.7.42</ip>
+	        <port>80</port>
+	        <MAC>d0:ff:50:1a:93:c8</MAC>
+	    </dataloger>	    
+	    
+	    <pc>
+	    	<MAC>d4:be:d9:c7:ae:50</MAC>
+	    </pc>
+	 </Setting>
+    
+</SecurityBox>

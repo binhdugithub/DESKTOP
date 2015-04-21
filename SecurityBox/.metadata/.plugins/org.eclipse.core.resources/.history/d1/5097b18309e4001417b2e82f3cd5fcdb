@@ -1,0 +1,69 @@
+/*
+ * HandleMACAddressTable.h
+ *
+ *  Created on: Apr 16, 2015
+ *      Author: binhdu
+ */
+
+#ifndef HANDLEMACADDRESSTABLE_H_
+#define HANDLEMACADDRESSTABLE_H_
+
+#include <pcap.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netinet/if_ether.h>
+#include <ctype.h>
+#include <iostream>
+#include <string.h>
+#include <netinet/ip.h>
+#include <vector>
+#include <thread>
+
+using namespace std;
+
+struct my_ip
+{
+	u_int8_t	ip_vhl;		/* header length, version */
+#define IP_V(ip)	(((ip)->ip_vhl & 0xf0) >> 4)
+#define IP_HL(ip)	((ip)->ip_vhl & 0x0f)
+	u_int8_t	ip_tos;		/* type of service */
+	u_int16_t	ip_len;		/* total length */
+	u_int16_t	ip_id;		/* identification */
+	u_int16_t	ip_off;		/* fragment offset field */
+#define	IP_DF 0x4000			/* dont fragment flag */
+#define	IP_MF 0x2000			/* more fragments flag */
+#define	IP_OFFMASK 0x1fff		/* mask for fragmenting bits */
+	u_int8_t	ip_ttl;		/* time to live */
+	u_int8_t	ip_p;		/* protocol */
+	u_int16_t	ip_sum;		/* checksum */
+	struct	in_addr ip_src,ip_dst;	/* source and dest address */
+};
+
+struct MAC_IP
+{
+	char MAC[20];
+	char IP[20];
+};
+
+
+class HandleMACAddressTable
+{
+public:
+	std::vector<MAC_IP> mMACAddressTable;
+	std::thread *mHMainThread;
+	volatile bool mRunningFlag;
+
+	static voi MainThread(void*);
+
+	bool AddMAC(MAC_IP);
+
+public:
+	HandleMACAddressTable();
+	virtual ~HandleMACAddressTable();
+};
+
+#endif /* HANDLEMACADDRESSTABLE_H_ */

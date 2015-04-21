@@ -1,0 +1,161 @@
+/*
+ * tcpconnection.h
+ *
+ *  Created on: Nov 7, 2012
+ *      Author: hungnv
+ */
+
+#ifndef TCPCONNECTION_H_
+#define TCPCONNECTION_H_
+
+#include <thread>
+#include <iostream>
+#include <netinet/in.h>
+#include <mutex>
+#include <chrono>
+#include <vector>
+#include "HandleMACAddressTable.h"
+#include <iostream>
+#include <string.h> // for all mem* routines
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netinet/tcp.h>
+#include <netinet/ip.h>
+#include <netdb.h>
+#include <sys/time.h>
+#include <sys/ioctl.h>
+#include <sys/epoll.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <pcap/pcap.h>
+#include <net/ethernet.h>
+#include <netinet/ether.h>
+#include <netinet/if_ether.h>
+#include <net/if.h>
+
+#include <time.h>
+
+
+#include "tinyxml.h"
+#include "tinystr.h"
+
+using namespace std;
+
+class TCPConnection
+{
+protected:
+
+	int mSocketListener;
+	int mSocketDataloger;
+	int mSocketWIM;
+
+	HandleMACAddressTable *mHandleSecurity;
+
+	std::thread *mHThreadListen;
+	volatile bool mRunningListenFlag;
+
+	std::vector<char*> mListMsgDataloger;
+	std::vector<char*> mListMsgWIM;
+	std::recursive_mutex mSocketWIMMutex;
+	std::recursive_mutex mSocketDatalogerMutex;
+
+	static void ThreadListen(void* arg);
+	void TransmitDataWIM();
+
+public:
+	char MACPcConfig[20];
+	char MACDatalogerConfig[20];
+	char IPDatalogerConfig[20];
+	unsigned short PortDatalogerConfig;
+public:
+	TCPConnection();
+	virtual ~TCPConnection();
+
+	void LoadConfig();
+
+
+	bool Create(unsigned short port);
+	void Close();
+	void CloseSocketWIM()
+	{
+		if(mSocketWIM != -1)
+		{
+			close(mSocketWIM);
+			mSocketWIM = -1;
+		}
+	};
+
+	void CloseSocketDataloger()
+	{
+		if(mSocketDataloger != -1)
+		{
+			close(mSocketDataloger);
+			mSocketDataloger = -1;
+		}
+	};
+
+
+	bool CorrectHTTPMsg(const char* buffer, int len)
+	{
+		printf("%c%c%c%c\n", buffer[len -4], buffer[len -3], buffer[len -2], buffer[len -1]);
+		if(buffer[len -4] == '\r' &&
+			buffer[len -3] == '\n'&&
+			buffer[len -2] == '\r'&&
+			buffer[len -1] == '\n')
+			return true;
+		else
+			return false;
+
+	}
+
+	int GetContentLeng(const char*buffer)
+	{
+		size_t x = std::string(buffer).find("Content-Length:");
+
+		if(x == std::string::npos)
+		{
+			return -1;
+		}
+		else
+		{
+			x += strlen("Content-Length:");
+			char valuec[20];
+			for(int i= x; i < 20; i++)
+			{
+				if(buffer[x] == '\n' || buffer[x] == ' ')
+					break;
+				valuec[i - x] = buffer[x];
+			}
+
+			int value = atoi(valuec);
+			printf("Content leng: %d\n", value);
+
+			return value;
+		}
+	}
+
+	void Close2Socket();
+	bool Listen();
+
+	void Start();
+	int  ConnectToServer();
+	bool Accept(int); // default is port was selected random
+	int  ReadPc(void* buffer, int buffer_len);
+	int  ReadDataloger( void* buffer, int buffer_len);
+	int  WritePc(const void* buffer, int buffer_len);
+	int  WriteDataloger(const void* buffer, int buffer_len);
+
+	void OnAccept(int);
+	void OnClose(int&);
+
+	bool CheckRequest(const char*);
+};
+
+#endif /* TCPCONNECTION_H_ */

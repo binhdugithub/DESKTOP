@@ -1,0 +1,7 @@
+20:58:54 **** Clean-only build of configuration Debug for project LiCab1 ****
+make clean 
+rm -rf  ./src/LiCab1.o  ./src/LiCab1.d  LiCab1
+ 
+
+20:58:54 Build Finished (took 119ms)
+

@@ -1,0 +1,16 @@
+01:46:22 **** Incremental Build of configuration Debug for project SecurityBox ****
+make all 
+Building file: ../src/TCPConnection.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -DTIXML_USE_STL -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TCPConnection.d" -MT"src/TCPConnection.d" -o "src/TCPConnection.o" "../src/TCPConnection.cpp"
+../src/TCPConnection.cpp: In member function ‘void TCPConnection::LoadConfig()’:
+../src/TCPConnection.cpp:602:16: warning: unused variable ‘ePC’ [-Wunused-variable]
+  TiXmlElement *ePC = eSetting->FirstChildElement("pc");
+                ^
+Finished building: ../src/TCPConnection.cpp
+ 
+Building target: SecurityBox
+Invoking: GCC C++ Linker
+g++ -pthread  -o "SecurityBox"  ./src/HandleMACAddressTable.o ./src/Main.o ./src/TCPConnection.o ./src/tinystr.o ./src/tinyxml.o ./src/tinyxmlerror.o ./src/tinyxmlparser.o   -lpcap -lpthread
+Finished building target: SecurityBox
+ 
