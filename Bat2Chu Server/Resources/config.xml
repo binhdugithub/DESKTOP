@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Bat2Chu>
+	<Setting>
+	    <network>
+	        <port>1212</port>
+	        <heartbeat enable="yes" timeout="4000" />              
+	    </network>	    
+	    <database host="127.0.0.1" user="root" password="root" database_name="Bat2Chu"  root_path_image="/opt/myapp/bat2chu/images" />	    
+	    <log path="/opt/myapp/bat2chu/logs" file="noname" />   
+	 </Setting>
+    
+</Bat2Chu>
