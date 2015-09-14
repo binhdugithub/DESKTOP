@@ -1,0 +1,496 @@
+﻿<Window x:Class="eVMS.View.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localConverters="clr-namespace:eVMS.Converters"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:wpfSpark="clr-namespace:WPFSpark;assembly=WPFSpark"
+        xmlns:properties="clr-namespace:eVMS.Properties"
+        Title="Đăng nhập" Width="450" Height="350"
+        Icon="../Icons/preferences_system_network.ico"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent">
+    <Window.Resources>
+        <properties:Settings x:Key="Settings" />
+        <localConverters:BorderClipConverter x:Key="ContentClipConverter"/>
+        <!--<localConverters:TextInputToVisibilityConverter  x:Key="TextBoxWatermarkConverter"/>-->
+        <Color x:Key="BkColor" >#f45b4b</Color>
+        <SolidColorBrush x:Key="BgColorBrush" Color="{StaticResource BkColor}"></SolidColorBrush>
+
+
+        <Style x:Key="TextboxStyles" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border Name="Border"  CornerRadius="20" BorderThickness="{TemplateBinding BorderThickness}" >
+                                <Border.Background>
+                                    <SolidColorBrush Color="#cacaca" x:Name="Background" />
+                                </Border.Background>
+
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="Gray" x:Name="BorderBrush" Opacity="1"/>
+                                </Border.BorderBrush>
+
+                                <ScrollViewer Margin="10,0,10,0" x:Name="PART_ContentHost" VerticalAlignment="Center"/>
+
+                            </Border>
+                            <Label Content="{TemplateBinding Tag}" FontFamily="Arial" Visibility="Collapsed" Margin="20,0,0,0" x:Name="WaterMarkLabel" VerticalContentAlignment="Center" Foreground="WhiteSmoke" FontSize="16"></Label>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsFocused" Value="False"></Condition>
+                                    <Condition Property="Text" Value=""></Condition>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"></Setter>
+                            </MultiTrigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Collapsed"/>
+                            </Trigger>
+                            <!--<Trigger Property="IsFocused" Value="False">
+                                <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"/>
+                            </Trigger>-->
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+
+
+        </Style>
+
+        <Style x:Key="PasswordBoxStyles" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Grid>
+                            <Border Name="Border"  CornerRadius="20" BorderThickness="{TemplateBinding BorderThickness}" >
+                                <Border.Background>
+                                    <SolidColorBrush Color="#cacaca" x:Name="Background" />
+                                </Border.Background>
+
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="Gray" x:Name="BorderBrush" Opacity="1"/>
+                                </Border.BorderBrush>
+
+                                <ScrollViewer Margin="10,0,10,0" x:Name="PART_ContentHost" VerticalAlignment="Center"/>
+
+                            </Border>
+                            <Label Content="{TemplateBinding Tag}" Visibility="Collapsed" Margin="20,0,0,0"  x:Name="WaterMarkLabelPassWord" VerticalContentAlignment="Center" FontSize="16" Foreground="WhiteSmoke"></Label>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsFocused" Value="False"></Condition>
+                                    <!--<Condition Property="PasswordBox.Password" Value=""></Condition>-->
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Visibility" TargetName="WaterMarkLabelPassWord" Value="Visible"></Setter>
+                            </MultiTrigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Visibility" TargetName="WaterMarkLabelPassWord" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+
+            <!--<Setter Property="Tag" Value="False"/>-->
+            <EventSetter Event="PasswordChanged" Handler="OnPasswordChanged"/>
+
+        </Style>
+
+        <!-- Animated Expander Button's Template-->
+        <ControlTemplate x:Key="AnimatedExpanderButtonTemp" TargetType="{x:Type ToggleButton}">
+            <Border x:Name="ExpanderButtonBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="0"
+                    Padding="{TemplateBinding Padding}"
+                    >
+                <Grid Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="Transparent"
+                               Grid.ColumnSpan="2"/>
+                    <Ellipse Name="Circle"
+                         Grid.Column="0"
+                         Stroke="DarkGray"
+                         Width="20"
+                         Height="20"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         />
+                    <Path x:Name="Arrow"
+                      Grid.Column="0"
+                      Data="M 1,1.5 L 4.5,5 8,1.5"
+                      Stroke="#FF666666"
+                      StrokeThickness="2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      RenderTransformOrigin="0.5,0.5"
+                      >
+                        <Path.RenderTransform>
+                            <RotateTransform Angle="0"/>
+                        </Path.RenderTransform>
+                    </Path>
+                    <ContentPresenter x:Name="HeaderContent"
+                                      Grid.Column="1"
+                                      Margin="5,0,0,0"
+                                      VerticalAlignment="Center"
+                                      ContentSource="Content"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <!-- Animate arrow when toggled-->
+                <Trigger Property="IsChecked"
+                         Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="Arrow"
+                                                 Storyboard.TargetProperty="(Path.RenderTransform).(RotateTransform.Angle)"
+                                                 To="180"
+                                                 Duration="0:0:0.4"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="Arrow"
+                                                 Storyboard.TargetProperty="(Path.RenderTransform).(RotateTransform.Angle)"
+                                                 To="0"
+                                                 Duration="0:0:0.4"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+
+                <!-- MouseOver, Pressed behaviours-->
+                <Trigger Property="IsMouseOver"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF3C7FB1"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#222"
+                                    TargetName="Arrow"/>
+                </Trigger>
+                <Trigger Property="IsPressed"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF526C7B"
+                                    TargetName="Circle"/>
+                    <Setter Property="StrokeThickness"
+                                    Value="1.5"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#FF003366"
+                                    TargetName="Arrow"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <localConverters:MultiplyConverter x:Key="multiplyConverter" />
+        <ControlTemplate x:Key="RevealExpanderTemp" TargetType="{x:Type Expander}">
+            <DockPanel>
+                <ToggleButton x:Name="ExpanderButton" 
+                              Background="Transparent"
+                              DockPanel.Dock="Top"
+                              Template="{StaticResource AnimatedExpanderButtonTemp}"
+                              Content="{TemplateBinding Header}"
+                              IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                              OverridesDefaultStyle="True"
+                              Padding="1.5,0">
+                </ToggleButton>
+                <ScrollViewer x:Name="ExpanderContentScrollView" DockPanel.Dock="Bottom"
+                              HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Hidden"
+                              HorizontalContentAlignment="Stretch"
+                              VerticalContentAlignment="Bottom"
+                              >
+                    <ScrollViewer.Tag>
+                        <sys:Double>0.0</sys:Double>
+                    </ScrollViewer.Tag>
+                    <ScrollViewer.Height>
+                        <MultiBinding Converter="{StaticResource multiplyConverter}">
+                            <Binding Path="ActualHeight" ElementName="ExpanderContent"/>
+                            <Binding Path="Tag" RelativeSource="{RelativeSource Self}" />
+                        </MultiBinding>
+                    </ScrollViewer.Height>
+                    <ContentPresenter x:Name="ExpanderContent" ContentSource="Content"/>
+                </ScrollViewer>
+            </DockPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsExpanded" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="ExpanderContentScrollView"
+                                                 Storyboard.TargetProperty="Tag"                                                 
+                                                 To="1"
+                                                 Duration="0:0:0.4"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="ExpanderContentScrollView"
+                                                 Storyboard.TargetProperty="Tag"                                                 
+                                                 To="0"
+                                                 Duration="0:0:0.4"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </Window.Resources>
+    <Border CornerRadius="5" Background="#e1e1e1" ClipToBounds="True">
+        <Border.Clip>
+            <MultiBinding Converter="{StaticResource ContentClipConverter}">
+                <Binding Path="ActualWidth"
+                        RelativeSource="{RelativeSource Self}"/>
+                <Binding Path="ActualHeight"
+                        RelativeSource="{RelativeSource Self}"/>
+                <Binding Path="CornerRadius"
+                        RelativeSource="{RelativeSource Self}"/>
+            </MultiBinding>
+        </Border.Clip>
+        <Grid Height="Auto">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>-->
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="35" Text="eVMS ĐĂNG NHẬP" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource BgColorBrush}" FontFamily="Arial" />
+            <Grid Grid.Row="1">
+                <TextBox 
+                    Style="{StaticResource TextboxStyles}"
+                    Tag="Tài khoản"
+                    Name="TbName"
+                    Background="#cacaca"
+                    Width="400"  Height="40" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="20" Foreground="#424242" >
+                </TextBox>
+
+            </Grid>
+            <Grid Grid.Row="2">
+                <PasswordBox 
+                    Style="{StaticResource PasswordBoxStyles}"
+                    Tag="Mật khẩu"
+                    Name="PbPass"
+                    FontFamily="Arial"
+                    Background="#cacaca"
+                    Width="400"  Height="40" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="20" Foreground="#424242" >
+
+                </PasswordBox>
+
+            </Grid>
+            <Grid Grid.Row="3">
+                <!--<Border CornerRadius="20" BorderThickness="0" HorizontalAlignment="Right"
+                        Margin="0,0,50,0"
+                        Background="{StaticResource BgColorBrush}" 
+                        Width="125" Height="50">
+                    <Button Background="Transparent" Content="Login" BorderThickness="0" FontSize="25" Foreground="White"></Button>
+                </Border>-->
+                <DockPanel Margin="0,0,30,0" FlowDirection="RightToLeft">
+                    <Button Width="110" Content="HỦY"
+                        Margin="0,0,0,0"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="30"
+                        Name="BtnCan"
+                            Click="BtnCan_OnClick">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+
+                                <Grid>
+                                    <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="20"/>
+                                    <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Width="110" Content="ĐĂNG NHẬP"
+                        IsDefault="True"
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="30"
+                        Name="BtnLogin"
+                        Click="BtnLogin_OnClick">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+
+                                <Grid>
+                                    <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="20"/>
+                                    <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                </DockPanel>
+                
+            </Grid>
+            <Grid Grid.Row="4" Height="Auto">
+                <Expander 
+                          Template="{StaticResource RevealExpanderTemp}"
+                          OverridesDefaultStyle="True"
+                          BorderThickness="0"
+                          BorderBrush="Transparent"
+                          Background="Transparent"
+                          Expanded="Expander_OnExpanded"
+                          Collapsed="Expander_OnCollapsed"
+                          Foreground="{StaticResource BgColorBrush}"
+                          FontSize="14"
+                          FontFamily="Arial"
+                          Header="Cài đặt">
+
+                    <Grid Height="150">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBox 
+                            Style="{StaticResource TextboxStyles}"
+                            Name="TbIp"
+                            Tag="Máy chủ"
+                            Text="{Binding Source={StaticResource Settings}, Path=Default.ServerIp,Mode=TwoWay}"
+                            Background="#cacaca"
+                            Width="300"  Height="35" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="17" Foreground="#424242" >
+                        </TextBox>
+                        <TextBox Grid.Row="1"
+                                 Name="TbPort"
+                            Style="{StaticResource TextboxStyles}"
+                            Tag="Cổng"
+                            Text="{Binding Source={StaticResource Settings}, Path=Default.Port,Mode=TwoWay}"
+                            Background="#cacaca"
+                            Width="300"  Height="35" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="17" Foreground="#424242" >
+                        </TextBox>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="285,0,75,0" Width="80">
+                        <!--<Button 
+                            Height="23"
+                            Width="75"
+                            Name="BtnCheckServerIp"
+                            Click="BtnCheckServerIp_OnClick"
+                            Content="Kiểm tra"
+                            Foreground="WhiteSmoke"
+                            >
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+
+                                    <Grid>
+                                        <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="10"/>
+                                        <ContentPresenter HorizontalAlignment="Center"  
+                                        VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>-->
+                        <Button Grid.Row="2"
+                            Height="23"
+                            Width="75"
+                            Name="BtnSaveServerIp"
+                            Click="BtnSaveServerIp_OnClick"
+                            Content="Lưu"
+                            Foreground="WhiteSmoke"
+                                Margin="0,0,0,0"
+                            HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+
+                                    <Grid>
+                                        <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                    CornerRadius="10"/>
+                                        <ContentPresenter HorizontalAlignment="Center"  
+                                    VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        </StackPanel>
+                    </Grid>
+                </Expander>
+            </Grid>
+            <Grid Grid.Row="5" Margin="0,10,0,0" Background="{StaticResource BgColorBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <wpfSpark:FluidProgressBar Name="FluidProgressBar" Height="10" VerticalContentAlignment="Bottom"
+                                   Visibility="Collapsed"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"
+                                   Foreground="White"
+                                   DotWidth="3"
+                                   DotHeight="3"
+                                   DotRadiusX="0"
+                                   DotRadiusY="0"
+                                   Oscillate="True"
+                                   TotalDuration="00:00:03.25"
+                                   ReverseDuration="00:00:02.30"
+                                   KeyFrameA="0.3"
+                                   KeyFrameB="0.6"
+                                   DurationA="00:00:00.25"
+                                   DurationB="00:00:01.25"
+                                   DurationC="00:00:00.25"
+                                   Delay="00:00:00.095">
+                    </wpfSpark:FluidProgressBar>
+                    <TextBlock Grid.Row="1" Height="18" Foreground="White" Name="TblInfo" Text="" Visibility="Visible" HorizontalAlignment="Center"></TextBlock>
+                </Grid>
+            
+        </Grid>
+
+    </Border>
+</Window>

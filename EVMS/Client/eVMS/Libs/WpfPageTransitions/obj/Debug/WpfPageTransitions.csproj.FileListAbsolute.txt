@@ -1,0 +1,90 @@
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\bin\Debug\WpfPageTransitions.dll
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\bin\Debug\WpfPageTransitions.pdb
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions.csprojResolveAssemblyReference.cache
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\PageTransition.g.cs
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.cache
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.lref
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\PageTransition.baml
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions.g.resources
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions.Properties.Resources.resources
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions.csproj.GenerateResource.Cache
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions.dll
+C:\Users\TayDo\Downloads\Compressed\PageTransitionsDemo\WpfPageTransitions\obj\Debug\WpfPageTransitions.pdb
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\bin\Debug\WpfPageTransitions.dll
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\bin\Debug\WpfPageTransitions.pdb
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\PageTransition.g.cs
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.cache
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.lref
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\PageTransition.baml
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions.g.resources
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions.Properties.Resources.resources
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions.csproj.GenerateResource.Cache
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions.dll
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions.pdb
+E:\Work\SampleSource\ReceiptsExpensesMan\WpfPageTransitions\obj\Debug\WpfPageTransitions.csprojResolveAssemblyReference.cache
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.dll
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.pdb
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\PageTransition.g.cs
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.cache
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.lref
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\PageTransition.baml
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.g.resources
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.Properties.Resources.resources
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csproj.GenerateResource.Cache
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.dll
+E:\Work\SampleSource\ReceiptsExpensesMan\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.pdb
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.dll
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.pdb
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csprojResolveAssemblyReference.cache
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\PageTransition.g.cs
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.cache
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.lref
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\PageTransition.baml
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.g.resources
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.Properties.Resources.resources
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csproj.GenerateResource.Cache
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.dll
+C:\Users\hoanglm\Downloads\WpfTreeViewExamples (1)\WpfTreeViewExamples\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.pdb
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.dll
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.pdb
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csprojResolveAssemblyReference.cache
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\PageTransition.g.cs
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.cache
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.lref
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\PageTransition.baml
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.g.resources
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.Properties.Resources.resources
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csproj.GenerateResource.Cache
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.dll
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.pdb
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.dll
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.pdb
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csprojResolveAssemblyReference.cache
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\PageTransition.g.cs
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.cache
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.lref
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\PageTransition.baml
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.g.resources
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.Properties.Resources.resources
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csproj.GenerateResource.Cache
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.dll
+E:\Work\Backup\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.pdb
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\bin\Debug\WpfPageTransitions.pdb
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\PageTransition.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.cache
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions_MarkupCompile.lref
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\PageTransition.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.g.resources
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.Properties.Resources.resources
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csproj.GenerateResource.Cache
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.pdb
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\Libs\WpfPageTransitions\obj\Debug\WpfPageTransitions.csprojResolveAssemblyReference.cache

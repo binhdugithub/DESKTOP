@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C24EB95-48C0-4B47-B654-91E445C2CDD5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eVMS</RootNamespace>
+    <AssemblyName>eVMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\preferences_system_network.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DrawToolLibWPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\DrawToolLibWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NRtfTree">
+      <HintPath>C:\Users\hoanglm\Downloads\nrtftree_030b1\nrtftree_030b1\demo\NRtfTree.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ToggleSwitch">
+      <HintPath>..\packages\ToggleSwitch.1.1.1\lib\net40-client\ToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\Libs\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Converters\BoolToStatusStringConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\BorderClipConverter .cs" />
+    <Compile Include="Converters\CustomImagePathConverter.cs" />
+    <Compile Include="Converters\IntToImageConverter .cs" />
+    <Compile Include="Converters\MultiplyConverter.cs" />
+    <Compile Include="Converters\PathConverter.cs" />
+    <Compile Include="Converters\ProgramtoStatusVMSConverter.cs" />
+    <Compile Include="Converters\RtfToFlowDocumentConverter.cs" />
+    <Compile Include="Converters\TextBoxWatermarkConverter.cs" />
+    <Compile Include="Jsoncontract\AccountList.cs" />
+    <Compile Include="Jsoncontract\AddnewUserMessaget.cs" />
+    <Compile Include="Jsoncontract\AssignVmsToUserMessage.cs" />
+    <Compile Include="Jsoncontract\GetListUser.cs" />
+    <Compile Include="Jsoncontract\HistorylistMessage.cs" />
+    <Compile Include="Jsoncontract\ImageSourceListMessage.cs" />
+    <Compile Include="Jsoncontract\InfoReturn.cs" />
+    <Compile Include="Jsoncontract\ProgramMessage.cs" />
+    <Compile Include="Jsoncontract\RoleList.cs" />
+    <Compile Include="Jsoncontract\SingleValueArrayConverter .cs" />
+    <Compile Include="Jsoncontract\UserAccount.cs" />
+    <Compile Include="Jsoncontract\VmsDeviceMessage.cs" />
+    <Compile Include="Jsoncontract\VmsListMessage.cs" />
+    <Compile Include="Jsoncontract\VmsMessage.cs" />
+    <Compile Include="MessageView\DeleteAccountScreen.xaml.cs">
+      <DependentUpon>DeleteAccountScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageView\DeleteVmsScreen.xaml.cs">
+      <DependentUpon>DeleteVmsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageView\SaveAsTemplate.xaml.cs">
+      <DependentUpon>SaveAsTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageView\SaveTemplateDialog.xaml.cs">
+      <DependentUpon>SaveTemplateDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\Vms.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utils\DoubleClickBehavior.cs" />
+    <Compile Include="Utils\Log4Net.cs" />
+    <Compile Include="Utils\Password.cs" />
+    <Compile Include="Utils\Resource.cs" />
+    <Compile Include="Utils\TreeViewExtensions.cs" />
+    <Compile Include="ViewModel\AssignVmsViewModel.cs" />
+    <Compile Include="ViewModel\ChoosingImageSourceScreenViewmodel.cs" />
+    <Compile Include="ViewModel\HistoryViewModel.cs" />
+    <Compile Include="ViewModel\MonitoringScreenViewmodel.cs" />
+    <Compile Include="ViewModel\PersonViewModel.cs" />
+    <Compile Include="ViewModel\ProgramScreenViewModel.cs" />
+    <Compile Include="ViewModel\ScreenTextEditorViewModel.cs" />
+    <Compile Include="ViewModel\TreeViewVmsModel.cs" />
+    <Compile Include="ViewModel\UserAdministratorViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\VmsAdministratorViewModel.cs" />
+    <Compile Include="ViewModel\VmsViewModel.cs" />
+    <Compile Include="View\AddUserScreen.xaml.cs">
+      <DependentUpon>AddUserScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddVmsScreen.xaml.cs">
+      <DependentUpon>AddVmsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AsignVmsToUserScreen.xaml.cs">
+      <DependentUpon>AsignVmsToUserScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChoosingImageSourceScreen.xaml.cs">
+      <DependentUpon>ChoosingImageSourceScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DrawingVmsScreen.xaml.cs">
+      <DependentUpon>DrawingVmsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditVmsScreen.xaml.cs">
+      <DependentUpon>EditVmsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryScreen.xaml.cs">
+      <DependentUpon>HistoryScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageObjectSettingScreen.xaml.cs">
+      <DependentUpon>ImageObjectSettingScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MonitoringScreen.xaml.cs">
+      <DependentUpon>MonitoringScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProgramScreen.xaml.cs">
+      <DependentUpon>ProgramScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TextEditor.xaml.cs">
+      <DependentUpon>TextEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TextObjectSettingScreen.xaml.cs">
+      <DependentUpon>TextObjectSettingScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserAdminstratorScreen.xaml.cs">
+      <DependentUpon>UserAdminstratorScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditUserAccountScreen.xaml.cs">
+      <DependentUpon>EditUserAccountScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ServerSetting.xaml.cs">
+      <DependentUpon>ServerSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VMSAdminstratorScreen.xaml.cs">
+      <DependentUpon>VMSAdminstratorScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VmsMonitoringScreen.xaml.cs">
+      <DependentUpon>VmsMonitoringScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VMS\VmsObject.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MessageView\DeleteAccountScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageView\DeleteVmsScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageView\SaveAsTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageView\SaveTemplateDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionary\Color.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddUserScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddVmsScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AsignVmsToUserScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChoosingImageSourceScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DrawingVmsScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditVmsScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HistoryScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageObjectSettingScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MonitoringScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProgramScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TextEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TextObjectSettingScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserAdminstratorScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditUserAccountScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ServerSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VMSAdminstratorScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VmsMonitoringScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Roadgeek 2000 Series B.TTF" />
+    <Resource Include="Fonts\Roadgeek 2000 Series C.TTF" />
+    <None Include="Help\eVMS guide.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Setting.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\VMSController.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menu.png" />
+    <Resource Include="Images\Menu_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\adduser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\adduser_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\edit_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\delete_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settingtext.png" />
+    <Resource Include="Images\setting_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libs\WpfPageTransitions\WpfPageTransitions.csproj">
+      <Project>{22a46d61-1d40-43a9-802c-b9d43dadd9ec}</Project>
+      <Name>WpfPageTransitions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libs\WPFSpark\WPFSpark.csproj">
+      <Project>{98be1309-ceb4-45ee-b4ad-28baf0570fab}</Project>
+      <Name>WPFSpark</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\VmsAdmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addpicture1.png" />
+    <Resource Include="Images\addtext1.png" />
+    <Resource Include="Images\page_text_add.png" />
+    <Resource Include="Images\photo_add.png" />
+    <Resource Include="Images\vms1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addtext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addpicture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\vms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\text_bold.png" />
+    <Resource Include="Images\text_italic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\text_underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\send_email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\itemsend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Monitoring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\saveas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Vmsoff.png" />
+    <Resource Include="Images\Vmson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\view_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\alignment_center.png" />
+    <Resource Include="Images\alignment_left.png" />
+    <Resource Include="Images\alignment_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\alignment_top.png" />
+    <Resource Include="Images\alignment_bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\alignment_middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\package_system.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\preferences_system_network.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\program_group.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\accessories_text_editor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\account_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\document_save_as.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add_user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add_item.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add_to_cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\view_choose.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\pencil_small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\write_document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addvms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addvms_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\search_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rewind.png" />
+    <Resource Include="Images\rewind_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\left.png" />
+    <Resource Include="Images\left_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\right.png" />
+    <Resource Include="Images\right_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fast.png" />
+    <Resource Include="Images\fast_over.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

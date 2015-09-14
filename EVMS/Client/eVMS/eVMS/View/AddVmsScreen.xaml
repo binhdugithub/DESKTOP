@@ -1,0 +1,428 @@
+﻿<Window x:Class="eVMS.View.AddVmsScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:wpfSpark="clr-namespace:WPFSpark;assembly=WPFSpark"
+        xmlns:toggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
+        Title="Tạo mới VMS" Height="560" Width="450"
+        Icon="../Icons/add_item.ico"
+        BorderBrush="Black"
+        BorderThickness="1"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#e1e1e1"
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="../Assets/Styles.xaml"/>
+                <ResourceDictionary Source="../Assets/ToggleSwitchStyles.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="VisibilityConverter"/>
+
+            <LinearGradientBrush x:Key="UncheckedStateBrush"
+                             EndPoint="0,1"
+                             StartPoint="0,0">
+                <GradientStop Color="#FF81230E" />
+                <GradientStop Color="#FFF15910"
+                          Offset="0.365" />
+                <GradientStop Color="#FFF5A782"
+                          Offset="1" />
+            </LinearGradientBrush>
+            <Color x:Key="BkColor" >#f45b4b</Color>
+            <SolidColorBrush x:Key="BgColorBrush" Color="{StaticResource BkColor}"></SolidColorBrush>
+            <Color x:Key="BkTextColor" >#424242</Color>
+            <SolidColorBrush x:Key="BgTextColorBrush" Color="{StaticResource BkTextColor}"></SolidColorBrush>
+
+            <Style x:Key="TextboxStyles" TargetType="{x:Type TextBox}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Grid>
+                                <Border Name="Border"  CornerRadius="5" BorderThickness="{TemplateBinding BorderThickness}" >
+                                    <Border.Background>
+                                        <SolidColorBrush Color="#cacaca" x:Name="Background" />
+                                    </Border.Background>
+
+                                    <Border.BorderBrush>
+                                        <SolidColorBrush Color="Gray" x:Name="BorderBrush" Opacity="1"/>
+                                    </Border.BorderBrush>
+
+                                    <ScrollViewer Margin="10,0,10,0" x:Name="PART_ContentHost" VerticalAlignment="Center"/>
+
+                                </Border>
+                                <Label Content="{TemplateBinding Tag}" FontFamily="Arial" Visibility="Collapsed" Margin="20,0,0,0" x:Name="WaterMarkLabel" VerticalContentAlignment="Center" Foreground="White"></Label>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsFocused" Value="False"></Condition>
+                                        <Condition Property="Text" Value=""></Condition>
+                                    </MultiTrigger.Conditions>
+                                    <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"></Setter>
+                                </MultiTrigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Collapsed"/>
+                                </Trigger>
+                                <!--<Trigger Property="IsFocused" Value="False">
+                                <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"/>
+                            </Trigger>-->
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <sys:Double x:Key="WidthValue" >300</sys:Double>
+            <sys:Double x:Key="LabelWidthValue" >100</sys:Double>
+            <sys:Double x:Key="HeightValue" >25</sys:Double>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Label Foreground="{StaticResource BgColorBrush}" FontSize="14" Height="30" Margin="10,1,0,11" FontWeight="DemiBold" Content="TẠO MỚI VMS" Grid.ColumnSpan="2"></Label>
+
+        <Label Grid.Row="1"
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Width="{StaticResource LabelWidthValue}"  Height="{StaticResource HeightValue}"
+               Content="Tên VMS"></Label>
+        <TextBox Grid.Row="1"
+                 ToolTip="Tên VMS"
+                 MaxLength="50"
+                    Style="{StaticResource TextboxStyles}"
+                    
+                    Name="TbName"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" 
+                    Foreground="{StaticResource BgTextColorBrush}" Grid.Column="1" 
+                    HorizontalAlignment="Left"
+                    Margin="10,8,0,8" >
+        </TextBox>
+        <Label Content="*" Grid.Row="1" Foreground="Red" IsTabStop="False" HorizontalAlignment="Right" Grid.Column="1"></Label>
+
+
+        <Label Grid.Row="2"
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Width="{StaticResource LabelWidthValue}"  Height="{StaticResource HeightValue}"
+               Content="Vị trí"></Label>
+        <TextBox Grid.Row="2"
+                    ToolTip="Vị trí"
+                 MaxLength="50"
+                    Style="{StaticResource TextboxStyles}"
+                    
+                    Name="TbLocation"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="{StaticResource BgTextColorBrush}" Grid.Column="1" 
+                    HorizontalAlignment="Left"
+                    Margin="10,8,0,8" >
+        </TextBox>
+        <Label Content="*" Grid.Row="2" Foreground="Red" IsTabStop="False" HorizontalAlignment="Right" Grid.Column="1"></Label>
+
+
+        <Label Grid.Row="3"
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Width="{StaticResource LabelWidthValue}"  Height="{StaticResource HeightValue}"
+               Content="Mô tả"></Label>
+        <TextBox Grid.Row="3"
+                 ToolTip="Mô tả"
+                    Style="{StaticResource TextboxStyles}"
+                    
+                    Name="TbDescription"
+                    Background="#cacaca"
+                    MaxLength="80"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Margin="10,8,0,8" >
+        </TextBox>
+        <Label Content="*" Grid.Row="3" Foreground="Red" IsTabStop="False" HorizontalAlignment="Right" Grid.Column="1"></Label>
+        <!--<TextBox Grid.Row="4"
+                 ToolTip="Giới tính"
+                    Style="{StaticResource TextboxStyles}"
+                    Tag="Giới tính"
+                    Name="TbSex"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" >
+        </TextBox>-->
+        <!--<TextBox Grid.Row="4"
+                 ToolTip="Rộng"
+                    Style="{StaticResource TextboxStyles}"
+                    Tag="Rộng"
+                    Name="Tbwidth"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" >
+        </TextBox>
+        <TextBox Grid.Row="5"
+                 ToolTip="Cao"
+                    Style="{StaticResource TextboxStyles}"
+                    Tag="Cao"
+                    Name="Tbheight"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" >
+        </TextBox>-->
+
+        <Label Grid.Row="4"
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Padding="5,0,0,5"
+               Width="{StaticResource LabelWidthValue}"  Height="{StaticResource HeightValue}"
+               Content="Địa chỉ Ip"></Label>
+        <TextBox Grid.Row="4"
+                 ToolTip="Địa chỉ Ip"
+                 MaxLength="30"
+                    Style="{StaticResource TextboxStyles}"
+                    
+                    Name="TbIp"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" Grid.Column="1" 
+                    HorizontalAlignment="Left"
+                    Margin="10,8,0,8" >
+        </TextBox>
+        <Label Content="*" Grid.Row="4" Foreground="Red" IsTabStop="False" HorizontalAlignment="Right" Grid.Column="1"></Label>
+
+        <Label Grid.Row="5"
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Width="{StaticResource LabelWidthValue}"  Height="{StaticResource HeightValue}"
+               Padding="5,0,0,5"
+               Content="Cổng"></Label>
+        <TextBox Grid.Row="5"
+                 ToolTip="Cổng"
+                 MaxLength="10"
+                    Style="{StaticResource TextboxStyles}"
+                    
+                    Name="TbPort"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" Grid.Column="1" 
+                    HorizontalAlignment="Left"
+                    Margin="10,8,0,8" >
+        </TextBox>
+        <Label Content="*" Grid.Row="5" Foreground="Red" IsTabStop="False" HorizontalAlignment="Right" Grid.Column="1"></Label>
+        <!--<TextBox Grid.Row="6"
+                 ToolTip="Model"
+                    Style="{StaticResource TextboxStyles}"
+                    Tag="Model"
+                    Name="TbModel"
+                    Background="#cacaca"
+                    Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" >
+        </TextBox>-->
+
+        <Label Grid.Row="6"
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Width="{StaticResource LabelWidthValue}"  Height="{StaticResource HeightValue}"
+               Content="Model"></Label>
+        <ComboBox Grid.Row="6" IsTextSearchEnabled="True"  
+                  Name="CbxModel"
+                  DisplayMemberPath="modelname"
+                  SelectedItem="{Binding Vmsmodel}"
+                  SelectionChanged="CbxModel_OnSelectionChanged"
+                  Padding="25,0,0,0"
+                  StaysOpenOnEdit="True" 
+                  Width="{StaticResource WidthValue}"  Height="{StaticResource HeightValue}"  IsReadOnly="False" IsEditable="False" BorderBrush="Transparent" Grid.Column="1" 
+                  HorizontalAlignment="Left"
+                  Margin="10,8,0,8">
+            <ComboBox.Resources>
+                <VisualBrush x:Key="HelpBrush" TileMode="None"  Stretch="None" AlignmentX="Left">
+                    <VisualBrush.Visual>
+                        <TextBlock   Foreground="WhiteSmoke"
+                                  Padding="20,0,0,0" Background="#cacaca" Width="300" Height="25"  Text="Model"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </ComboBox.Resources>
+            <ComboBox.Style>
+                <Style TargetType="ComboBox">
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+        <Label Content="*" Grid.Row="6" Foreground="Red" IsTabStop="False" HorizontalAlignment="Right" Grid.Column="1"></Label>
+
+        <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+
+            <Label 
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Width="40"  Height="{StaticResource HeightValue}"
+                Padding="0,0,0,2"
+                Margin="10,0,0,0"
+               Content="Rộng"></Label>
+            <TextBox Grid.Row="7"
+                 ToolTip="Rộng"
+                 
+                    Style="{StaticResource TextboxStyles}"
+                    Name="Tbwidth"
+                    Background="#cacaca"
+                 IsReadOnly="True"
+                    HorizontalAlignment="Left"
+                  Margin="0,0,0,0"
+                    Width="105"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" >
+            </TextBox>
+
+            <Label 
+               VerticalContentAlignment="Center"
+               VerticalAlignment="Center"
+               Width="30"  Height="{StaticResource HeightValue}"
+                Padding="0,0,0,2"
+                Margin="20,0,0,0"
+               Content="Cao"></Label>
+            <TextBox Grid.Row="7"
+                 ToolTip="Cao"
+                 IsReadOnly="True"
+                 
+                    Style="{StaticResource TextboxStyles}"
+                    Name="Tbheight"
+                    Margin="0,0,0,0"
+                    Background="#cacaca"
+                    Width="105"  Height="{StaticResource HeightValue}" Padding="20,0,0,0" BorderThickness="0" VerticalContentAlignment="Center" FontSize="12" Foreground="#424242" >
+            </TextBox>
+        </StackPanel>
+
+        <DataGrid Name="dgVms" Grid.Row="8" 
+                        Grid.RowSpan="2"
+                      AutoGenerateColumns="False" 
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      VerticalScrollBarVisibility="Disabled" 
+                    HorizontalAlignment="Left"
+                      Margin="10,0,0,0"
+                    SelectionUnit="FullRow"
+                    RenderOptions.ClearTypeHint="Enabled"
+                    TextOptions.TextFormattingMode="Display"
+                    BorderBrush="Gainsboro"
+                  SelectionMode="Single"
+                  Background="Transparent"
+                  Foreground="DarkSlateGray"
+                  FontSize="12"
+                    BorderThickness="0,1,0,0"
+                    HeadersVisibility="All" 
+                    HorizontalGridLinesBrush="Green" Grid.Column="1" 
+                  Width="300"
+                    >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kiểu Vms Hiển thị" Binding="{Binding typename}" Width="150" Foreground="Black" FontWeight="DemiBold" FontSize="12"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Grid.Row="10" FontSize="12" Content="Trạng thái" Width="100" HorizontalAlignment="Left" Margin="0,0,0,0" Height="30"></Label>
+        <Grid Grid.Row="10" Width="80" Height="20" Grid.Column="1" Margin="8,11,75,11" HorizontalAlignment="Left">
+
+            <toggleSwitch:HorizontalToggleSwitch Name="ToggleSwitchStatus" IsEnabled="False"
+                    IsChecked="True" HorizontalAlignment="Right" CheckedContent="Bật" UncheckedContent="Tắt" Width="75"/>
+        </Grid>
+
+        <DockPanel Grid.Row="11" Margin="48,5,25,5" FlowDirection="RightToLeft" Grid.Column="1">
+            <Button Width="75" Content="Hủy" HorizontalAlignment="Left"
+                        Foreground="White"
+                        Margin="0,0,0,0"
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="20"
+                        Name="BtnCan"
+                        Click="BtnCan_OnClick">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+
+                        <Grid>
+                            <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="10"/>
+                            <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Width="75" Content="Chấp nhận"
+                        Margin="10,0,0,0"
+                        IsDefault="True"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="20"
+                        Name="BtnOk"
+                    Click="BtnOk_OnClick"
+                        >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="10"/>
+                            <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DockPanel>
+        <Grid Grid.Row="12" Margin="0,10,0,0" Background="{StaticResource BgColorBrush}" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <wpfSpark:FluidProgressBar Name="FluidProgressBar" Height="10" VerticalContentAlignment="Bottom"
+                                   Visibility="Collapsed"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"
+                                   Foreground="White"
+                                   DotWidth="3"
+                                   DotHeight="3"
+                                   DotRadiusX="0"
+                                   DotRadiusY="0"
+                                   Oscillate="True"
+                                   TotalDuration="00:00:03.25"
+                                   ReverseDuration="00:00:02.30"
+                                   KeyFrameA="0.3"
+                                   KeyFrameB="0.6"
+                                   DurationA="00:00:00.25"
+                                   DurationB="00:00:01.25"
+                                   DurationC="00:00:00.25"
+                                   Delay="00:00:00.095">
+            </wpfSpark:FluidProgressBar>
+            <TextBlock Grid.Row="1" Height="18" Foreground="White" Name="TblInfo" Text="" Visibility="Visible" HorizontalAlignment="Center"></TextBlock>
+        </Grid>
+
+    </Grid>
+</Window>

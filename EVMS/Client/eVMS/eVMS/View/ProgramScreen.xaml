@@ -1,0 +1,179 @@
+﻿<Window x:Class="eVMS.View.ProgramScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfSpark="clr-namespace:WPFSpark;assembly=WPFSpark"
+        Title="Danh sách chương trình" Height="450" Width="320"
+        Icon="../Icons/program_group.ico"
+        WindowStartupLocation="CenterOwner"
+        BorderBrush="Black"
+        BorderThickness="1"
+        WindowStyle="None"
+        Background="#e1e1e1"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+
+        </Grid.RowDefinitions>
+        <Label Foreground="{StaticResource BgColorBrush}" FontSize="14" Height="30" Margin="10,-10,0,0" FontWeight="DemiBold" Content="DANH SÁCH CHƯƠNG TRÌNH"></Label>
+        <DataGrid Name="dgPrograms" Grid.Row="1" 
+                      AutoGenerateColumns="False" 
+                      ItemsSource="{Binding Programs}" 
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      VerticalScrollBarVisibility="Disabled" 
+                      Margin="10,0"
+                      SelectionUnit="FullRow"
+                      RenderOptions.ClearTypeHint="Enabled"
+                      TextOptions.TextFormattingMode="Display"
+                      BorderBrush="Gainsboro"
+                    
+                      SelectionMode="Single"
+                      Background="Transparent"
+                      Foreground="DarkSlateGray"
+                      FontSize="12"
+                      BorderThickness="0,1,0,0"
+                      HeadersVisibility="All" 
+                      HorizontalGridLinesBrush="Green">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tên" Binding="{Binding name}" Width="150" Foreground="Black" FontWeight="DemiBold" FontSize="12"/>
+                <DataGridTextColumn Header="Rộng" Binding="{Binding width}" Width="70" Foreground="Black" FontWeight="DemiBold" FontSize="12"/>
+                <DataGridTextColumn Header="Cao" Binding="{Binding height}" Width="70" Foreground="Black" FontWeight="DemiBold" FontSize="12"/>
+                <!--<DataGridTextColumn Header="Vị trí" Binding="{Binding VmsItem.location}" MinWidth="100" Width="Auto" FontWeight="DemiBold"/>-->
+                <!--<DataGridCheckBoxColumn
+                                        
+                                        Header="Chọn"
+                                        Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridCell}, Path=IsSelected, Mode=TwoWay}"
+                                        />-->
+                <!--<DataGridTemplateColumn Header="Chọn">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Name="chkDiscontinue" IsChecked="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DockPanel Grid.Row="2" Margin="50,5,25,5" FlowDirection="RightToLeft">
+            <Button Width="75" Content="Hủy" HorizontalAlignment="Left"
+                        Foreground="White"
+                        Margin="0,0,0,0"
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="20"
+                        Name="BtnCan"
+                        Click="BtnCan_OnClick">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+
+                        <Grid>
+                            <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="10"/>
+                            <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Width="75" Content="Chọn"
+                        Margin="10,0,0,0"
+                        IsDefault="True"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="20"
+                        Name="BtnOk"
+                    Click="BtnOk_OnClick"
+                        >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="10"/>
+                            <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Width="75" Content="Xóa"
+                        Margin="10,0,0,0"
+                        IsDefault="True"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Height="20"
+                        Name="BtnDel"
+                    Click="BtnDel_OnClick"
+                        >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="ButtonBoder" Background="{StaticResource BgColorBrush}"
+                                        CornerRadius="10"/>
+                            <ContentPresenter HorizontalAlignment="Center"  
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="ButtonBoder" Value="Goldenrod"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DockPanel>
+
+        <Grid Grid.Row="3" Margin="0,10,0,0" Background="{StaticResource BgColorBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <wpfSpark:FluidProgressBar Name="FluidProgressBar" Height="10" VerticalContentAlignment="Bottom"
+                                   Visibility="Collapsed"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"
+                                   Foreground="White"
+                                   DotWidth="3"
+                                   DotHeight="3"
+                                   DotRadiusX="0"
+                                   DotRadiusY="0"
+                                   Oscillate="True"
+                                   TotalDuration="00:00:03.25"
+                                   ReverseDuration="00:00:02.30"
+                                   KeyFrameA="0.3"
+                                   KeyFrameB="0.6"
+                                   DurationA="00:00:00.25"
+                                   DurationB="00:00:01.25"
+                                   DurationC="00:00:00.25"
+                                   Delay="00:00:00.095">
+            </wpfSpark:FluidProgressBar>
+            <TextBlock Grid.Row="1" Height="18" Foreground="White" Name="TblInfo" Text="" Visibility="Visible" HorizontalAlignment="Center"></TextBlock>
+        </Grid>
+    </Grid>
+</Window>

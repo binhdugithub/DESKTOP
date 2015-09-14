@@ -1,0 +1,257 @@
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\bin\Debug\eVMS.exe.config
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\bin\Debug\eVMS.exe
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\bin\Debug\eVMS.pdb
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\MainWindow.baml
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\View\Login.baml
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\MainWindow.g.cs
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\View\Login.g.cs
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\App.g.cs
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS_MarkupCompile.cache
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS.g.resources
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS.Properties.Resources.resources
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS.csproj.GenerateResource.Cache
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS.exe
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS.pdb
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS_MarkupCompile.lref
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\bin\Debug\MahApps.Metro.dll
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\bin\Debug\System.Windows.Interactivity.dll
+c:\users\hoanglm\documents\visual studio 2013\Projects\eVMS\eVMS\bin\Debug\MahApps.Metro.xml
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\obj\Debug\View\ServerSetting.baml
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\obj\Debug\View\ServerSetting.g.cs
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\obj\Debug\App.baml
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\obj\Debug\eVMS.csprojResolveAssemblyReference.cache
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\bin\Debug\WpfPageTransitions.dll
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\bin\Debug\WpfPageTransitions.pdb
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\obj\Debug\View\AdminUser.baml
+C:\Users\hoanglm\Documents\Visual Studio 2013\Projects\eVMS\eVMS\obj\Debug\View\AdminUser.g.cs
+E:\Work\Backup\eVMS\eVMS\bin\Debug\eVMS.exe.config
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS.exe
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS.pdb
+E:\Work\Backup\eVMS\eVMS\bin\Debug\eVMS.exe
+E:\Work\Backup\eVMS\eVMS\bin\Debug\eVMS.pdb
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DevExpress.Charts.v14.2.Core.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Controls.v14.2.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Core.v14.2.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DevExpress.XtraBars.v14.2.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DrawToolLibWPF.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\log4net.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\MahApps.Metro.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Newtonsoft.Json.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\NRtfTree.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\RestSharp.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\System.Windows.Interactivity.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ToggleSwitch.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\WpfPageTransitions.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\WPFSpark.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\WPFToolkit.Extended.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Xceed.Wpf.DataGrid.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\WPFToolkit.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DrawToolLibWPF.pdb
+E:\Work\Backup\eVMS\eVMS\bin\Debug\WpfPageTransitions.pdb
+E:\Work\Backup\eVMS\eVMS\bin\Debug\WPFSpark.pdb
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Controls.v14.2.xml
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Core.v14.2.xml
+E:\Work\Backup\eVMS\eVMS\bin\Debug\DevExpress.XtraBars.v14.2.xml
+E:\Work\Backup\eVMS\eVMS\bin\Debug\log4net.xml
+E:\Work\Backup\eVMS\eVMS\bin\Debug\MahApps.Metro.xml
+E:\Work\Backup\eVMS\eVMS\bin\Debug\Newtonsoft.Json.xml
+E:\Work\Backup\eVMS\eVMS\bin\Debug\RestSharp.xml
+E:\Work\Backup\eVMS\eVMS\bin\Debug\de\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\es\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ja\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ru\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\de\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\es\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ja\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ru\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\de\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\es\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ja\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ru\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS.csprojResolveAssemblyReference.cache
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\DeleteAccountScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\DeleteVmsScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\SaveAsTemplate.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\SaveTemplateDialog.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\ResourceDictionary\Color.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\AddUserScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\AddVmsScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\AsignVmsToUserScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\DrawingVmsScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\EditVmsScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\MonitoringScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\ProgramScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\TextEditor.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\EditUserAccountScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\ServerSetting.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\VmsMonitoringScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MainWindow.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\DeleteAccountScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\DeleteVmsScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\SaveAsTemplate.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MessageView\SaveTemplateDialog.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\AddUserScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\AddVmsScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\AsignVmsToUserScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\DrawingVmsScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\EditVmsScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\ImageObjectSettingScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\MonitoringScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\ProgramScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\TextEditor.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\TextObjectSettingScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\UserAdminstratorScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\EditUserAccountScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\Login.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\ServerSetting.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\VMSAdminstratorScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\VmsMonitoringScreen.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\App.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS_MarkupCompile.cache
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS_MarkupCompile.lref
+E:\Work\Backup\eVMS\eVMS\obj\Debug\App.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\MainWindow.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\ImageObjectSettingScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\TextObjectSettingScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\UserAdminstratorScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\Login.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\View\VMSAdminstratorScreen.baml
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS.g.resources
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS.Properties.Resources.resources
+E:\Work\Backup\eVMS\eVMS\obj\Debug\eVMS.csproj.GenerateResource.Cache
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS.exe
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS.csprojResolveAssemblyReference.cache
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\DeleteAccountScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\DeleteVmsScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\SaveAsTemplate.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\SaveTemplateDialog.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\ResourceDictionary\Color.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\AddUserScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\AddVmsScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\AsignVmsToUserScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ChoosingImageSourceScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\DrawingVmsScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\EditVmsScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ProgramScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\TextEditor.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\EditUserAccountScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ServerSetting.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\VmsMonitoringScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MainWindow.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\DeleteAccountScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\DeleteVmsScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\SaveAsTemplate.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MessageView\SaveTemplateDialog.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\AddUserScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\AddVmsScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\AsignVmsToUserScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ChoosingImageSourceScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\DrawingVmsScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\EditVmsScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\HistoryScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ImageObjectSettingScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\MonitoringScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ProgramScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\TextEditor.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\TextObjectSettingScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\UserAdminstratorScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\EditUserAccountScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\Login.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ServerSetting.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\VMSAdminstratorScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\VmsMonitoringScreen.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\App.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS_MarkupCompile.cache
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS_MarkupCompile.lref
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS.pdb
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\eVMS.exe.config
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Help\eVMS guide.chm
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\eVMS.exe
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\eVMS.pdb
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DevExpress.Charts.v14.2.Core.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Controls.v14.2.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Core.v14.2.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DevExpress.XtraBars.v14.2.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DrawToolLibWPF.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\log4net.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\MahApps.Metro.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Newtonsoft.Json.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\NRtfTree.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\RestSharp.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\System.Windows.Interactivity.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ToggleSwitch.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\WpfPageTransitions.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\WPFSpark.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\WPFToolkit.Extended.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Xceed.Wpf.DataGrid.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\WPFToolkit.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\WpfPageTransitions.pdb
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\WPFSpark.pdb
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Controls.v14.2.xml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DevExpress.Xpf.Core.v14.2.xml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\DevExpress.XtraBars.v14.2.xml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\log4net.xml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\MahApps.Metro.xml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\Newtonsoft.Json.xml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\RestSharp.xml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\de\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\es\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ja\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ru\DevExpress.Xpf.Controls.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\de\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\es\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ja\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ru\DevExpress.Xpf.Core.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\de\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\es\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ja\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ru\DevExpress.XtraBars.v14.2.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\App.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\MainWindow.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\HistoryScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\ImageObjectSettingScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\MonitoringScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\TextObjectSettingScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\UserAdminstratorScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\Login.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\View\VMSAdminstratorScreen.baml
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS.g.resources
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS.Properties.Resources.resources
+E:\Work\SourceCode\CCTVEVms\eVms\Source\Client\eVMS\eVMS\obj\Debug\eVMS.csproj.GenerateResource.Cache
