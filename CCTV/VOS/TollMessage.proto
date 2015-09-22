@@ -1,0 +1,10 @@
+message TollMessage
+{
+    required int32 laneid = 1;
+    required uint32 price = 2;
+    required bytes timestamp = 3;
+    required bytes staffname = 4;
+    required bytes platenumber = 5;
+    required bytes vehicleclass = 6;
+    required bytes cameralaneip = 7;
+}

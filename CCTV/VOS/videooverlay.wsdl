@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="videooverlay"
+ targetNamespace="http://elcom.com.vn/its/voverlay"
+ xmlns:tns="http://elcom.com.vn/its/voverlay"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns="urn:voverlay"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:HTTP="http://schemas.xmlsoap.org/wsdl/http/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="urn:voverlay"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:voverlay"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <complexType name="soap-overlay-status"><!-- soap_overlay_status -->
+
+   <sequence>
+     <element name="errorid" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- soap_overlay_status::errorid -->
+     <element name="errordesc" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/><!-- soap_overlay_status::errordesc -->
+   </sequence>
+  </complexType>
+  <complexType name="voverlay-add-source-result"><!-- voverlay_add_source_result -->
+
+   <sequence>
+     <element name="state" type="ns:soap-overlay-status" minOccurs="1" maxOccurs="1"/><!-- voverlay_add_source_result::state -->
+     <element name="output-url" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/><!-- voverlay_add_source_result::output_url -->
+   </sequence>
+  </complexType>
+ </schema>
+
+</types>
+
+<message name="addsourceRequest">
+ <part name="sourceurl" type="xsd:string"/><!-- ns__addsource::sourceurl -->
+ <part name="sourcename" type="xsd:string"/><!-- ns__addsource::sourcename -->
+</message>
+
+<message name="addsourceResponse">
+ <part name="result" type="ns:voverlay-add-source-result"/><!-- ns__addsource::result -->
+</message>
+
+<message name="delsourceRequest">
+ <part name="sourceurl" type="xsd:string"/><!-- ns__delsource::sourceurl -->
+</message>
+
+<message name="delsourceResponse">
+ <part name="result" type="ns:soap-overlay-status"/><!-- ns__delsource::result -->
+</message>
+
+<message name="runsourceRequest">
+ <part name="command" type="xsd:int"/><!-- ns__runsource::command -->
+ <part name="sourceurl" type="xsd:string"/><!-- ns__runsource::sourceurl -->
+</message>
+
+<message name="runsourceResponse">
+ <part name="result" type="ns:soap-overlay-status"/><!-- ns__runsource::result -->
+</message>
+
+<message name="runserverRequest">
+ <part name="command" type="xsd:int"/><!-- ns__runserver::command -->
+</message>
+
+<message name="runserverResponse">
+ <part name="result" type="ns:soap-overlay-status"/><!-- ns__runserver::result -->
+</message>
+
+<message name="settextpositionRequest">
+ <part name="lanepos" type="xsd:int"/><!-- ns__settextposition::lanepos -->
+ <part name="staffpos" type="xsd:int"/><!-- ns__settextposition::staffpos -->
+ <part name="classpos" type="xsd:int"/><!-- ns__settextposition::classpos -->
+ <part name="licensenumberpos" type="xsd:int"/><!-- ns__settextposition::licensenumberpos -->
+ <part name="pricepos" type="xsd:int"/><!-- ns__settextposition::pricepos -->
+ <part name="timestamppos" type="xsd:int"/><!-- ns__settextposition::timestamppos -->
+</message>
+
+<message name="settextpositionResponse">
+ <part name="result" type="ns:soap-overlay-status"/><!-- ns__settextposition::result -->
+</message>
+
+<portType name="videooverlayPortType">
+ <operation name="addsource">
+  <documentation>Service definition of function ns__addsource</documentation>
+  <input message="tns:addsourceRequest"/>
+  <output message="tns:addsourceResponse"/>
+ </operation>
+ <operation name="delsource">
+  <documentation>Service definition of function ns__delsource</documentation>
+  <input message="tns:delsourceRequest"/>
+  <output message="tns:delsourceResponse"/>
+ </operation>
+ <operation name="runsource">
+  <documentation>Service definition of function ns__runsource</documentation>
+  <input message="tns:runsourceRequest"/>
+  <output message="tns:runsourceResponse"/>
+ </operation>
+ <operation name="runserver">
+  <documentation>Service definition of function ns__runserver</documentation>
+  <input message="tns:runserverRequest"/>
+  <output message="tns:runserverResponse"/>
+ </operation>
+ <operation name="settextposition">
+  <documentation>Service definition of function ns__settextposition</documentation>
+  <input message="tns:settextpositionRequest"/>
+  <output message="tns:settextpositionResponse"/>
+ </operation>
+</portType>
+
+<binding name="videooverlay" type="tns:videooverlayPortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="addsource">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="delsource">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="runsource">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="runserver">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="settextposition">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:voverlay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="videooverlay">
+ <documentation>- Elcom ITS Video Overlay</documentation>
+ <port name="videooverlay" binding="tns:videooverlay">
+  <SOAP:address location="http://locahost:port"/>
+ </port>
+</service>
+
+</definitions>

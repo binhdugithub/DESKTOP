@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elcom>
+	<cctv>
+	    <vos>
+            <general debug="true" isretry="true" ismulticast="false" />
+            <network svrport="8000" multicastip="226.1.1.1" multicastport="19000" />
+	    <streaming destinationip="default" rtpport="18888" rtcpport="18889" ttl="255"/> <!-- use in multicast only-->
+            <database host="192.168.6.150" port="3306" dbname="cctv" user="its" pass="its123" />
+	    <overlay keepoverlayinforactivated="60" />
+	    </vos>
+	</cctv>
+</elcom>
+
+
