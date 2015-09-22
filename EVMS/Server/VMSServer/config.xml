@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vms>
+  <setting>
+    <database database_host="tcp://192.168.7.68:3306" database_user="root" database_pass="12qw23qw"  database_name="vmssystem" />
+    <network  server_ip="192.168.7.32" server_port="8089" server_root="/api/evms"/>
+    <storage  screenshot="D:/PROJECTS/eVMS/www/screenshot" text="D:/PROJECTS/eVMS/www/text" http_screenshot="http://192.168.7.32:80/screenshot" http_imageresource="http://192.168.7.32:80/imageresource" imageresource="D:/PROJECTS/eVMS/www/imageresource" />
+  </setting>
+</vms>

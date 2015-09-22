@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{e1e8039a-4f9b-46ae-b123-7e4fabc19169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\CONFIGURATION">
+      <UniqueIdentifier>{e83fecac-a97b-4541-919d-8e0951441a80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DATABASE">
+      <UniqueIdentifier>{a74b27af-6c27-4962-b787-d13422961731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MSG">
+      <UniqueIdentifier>{ec7066f3-ad6d-4652-862d-3e6d249c5b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RESTFUL">
+      <UniqueIdentifier>{c74b7a13-6a6d-4a09-92b2-c1f2bc472ff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\CONFIGURATION\tinnyxml">
+      <UniqueIdentifier>{6fdc53dc-7de9-4af7-abda-5b6c425cbc27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DATABASE\DAL">
+      <UniqueIdentifier>{25e2d454-3709-409d-a4de-ee9d3d526499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DATABASE\BLL">
+      <UniqueIdentifier>{e1cafffe-370a-4587-9290-72e95c55de74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\IMAGEPROCESSING">
+      <UniqueIdentifier>{faef3ed5-9c5d-4315-a015-6a9a25934715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\LED">
+      <UniqueIdentifier>{f9f02100-50c0-4766-bc8d-ea54e360f97f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinystr.h">
+      <Filter>src\CONFIGURATION\tinnyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+      <Filter>src\CONFIGURATION\tinnyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuration.h">
+      <Filter>src\CONFIGURATION</Filter>
+    </ClInclude>
+    <ClInclude Include="DataAccess.h">
+      <Filter>src\DATABASE\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgLogin.h">
+      <Filter>src\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="RestConnection.h">
+      <Filter>src\RESTFUL</Filter>
+    </ClInclude>
+    <ClInclude Include="RestProcessing.h">
+      <Filter>src\RESTFUL</Filter>
+    </ClInclude>
+    <ClInclude Include="LogFile.h">
+      <Filter>src\CONFIGURATION</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseInterface.h">
+      <Filter>src\DATABASE</Filter>
+    </ClInclude>
+    <ClInclude Include="Define_Mif.h">
+      <Filter>src\RESTFUL</Filter>
+    </ClInclude>
+    <ClInclude Include="Role.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="History.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="TextSource.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSource.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="Program.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="Base64.h">
+      <Filter>src\IMAGEPROCESSING</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="UserObject.h">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClInclude>
+    <ClInclude Include="LedAPI.h">
+      <Filter>src\LED</Filter>
+    </ClInclude>
+    <ClInclude Include="LedController.h">
+      <Filter>src\LED</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VMSServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinystr.cpp">
+      <Filter>src\CONFIGURATION\tinnyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>src\CONFIGURATION\tinnyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>src\CONFIGURATION\tinnyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>src\CONFIGURATION\tinnyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="Configuration.cpp">
+      <Filter>src\CONFIGURATION</Filter>
+    </ClCompile>
+    <ClCompile Include="DataAccess.cpp">
+      <Filter>src\DATABASE\DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgLogin.cpp">
+      <Filter>src\MSG</Filter>
+    </ClCompile>
+    <ClCompile Include="RestConnection.cpp">
+      <Filter>src\RESTFUL</Filter>
+    </ClCompile>
+    <ClCompile Include="RestProcessing.cpp">
+      <Filter>src\RESTFUL</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseInterface.cpp">
+      <Filter>src\DATABASE</Filter>
+    </ClCompile>
+    <ClCompile Include="LogFile.cpp">
+      <Filter>src\CONFIGURATION</Filter>
+    </ClCompile>
+    <ClCompile Include="Role.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="History.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="TextSource.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageSource.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="Base64.cpp">
+      <Filter>src\IMAGEPROCESSING</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="UserObject.cpp">
+      <Filter>src\DATABASE\BLL</Filter>
+    </ClCompile>
+    <ClCompile Include="LedAPI.cpp">
+      <Filter>src\LED</Filter>
+    </ClCompile>
+    <ClCompile Include="LedController.cpp">
+      <Filter>src\LED</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="config.xml">
+      <Filter>src\CONFIGURATION</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\VC Demo\TestLED.sln" />
+  </ItemGroup>
+</Project>
