@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <elcom>
+        <cctv>
+            <nvr>
+            <general mode="1" tryconnect="1" />
+            <network soap_port="4000" />
+            <storage duration="60" video_path="/var/www/html/video" directory_path="/home" min_capacity="2048" />
+            <database ipserver="192.168.7.32" port="3306" user="duycm" password="123456" schema="cctv" />
+            </nvr>
+        </cctv>
+    </elcom>
+

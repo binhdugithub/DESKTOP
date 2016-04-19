@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="nvr"
+ targetNamespace="http://elcom.com.vn/its/nvr"
+ xmlns:tns="http://elcom.com.vn/its/nvr"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns="urn:nvr"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:HTTP="http://schemas.xmlsoap.org/wsdl/http/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="urn:nvr"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:nvr"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <simpleType name="nvr-error"><!-- nvr_error -->
+
+   <restriction base="xsd:string">
+    <enumeration value="NVR-OK"/><!-- nvr_error::NVR_OK -->
+    <!-- = 0 -->
+    <enumeration value="NVR-SOURCE-NOT-FOUND"/><!-- nvr_error::NVR_SOURCE_NOT_FOUND -->
+    <!-- = 1 -->
+    <enumeration value="NVR-SOURCE-EXIST"/><!-- nvr_error::NVR_SOURCE_EXIST -->
+    <!-- = 2 -->
+    <enumeration value="NVR-OUT-OF-CAPACITY"/><!-- nvr_error::NVR_OUT_OF_CAPACITY -->
+    <!-- = 3 -->
+    <enumeration value="NVR-SOURCE-INIT-FAILED"/><!-- nvr_error::NVR_SOURCE_INIT_FAILED -->
+    <!-- = 4 -->
+   </restriction>
+  </simpleType>
+  <complexType name="result-status"><!-- result_status -->
+
+   <sequence>
+     <element name="errorid" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- result_status::errorid -->
+     <element name="errordesc" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/><!-- result_status::errordesc -->
+   </sequence>
+  </complexType>
+ </schema>
+
+</types>
+
+<message name="startrecordRequest">
+ <part name="videostreamid" type="xsd:string"/><!-- ns__startrecord::videostreamid -->
+ <part name="videostreamurl" type="xsd:string"/><!-- ns__startrecord::videostreamurl -->
+ <part name="recordmode" type="xsd:int"/><!-- ns__startrecord::recordmode -->
+ <part name="duration" type="xsd:int"/><!-- ns__startrecord::duration -->
+</message>
+
+<message name="startrecordResponse">
+ <part name="result" type="ns:result-status"/><!-- ns__startrecord::result -->
+</message>
+
+<message name="stoprecordRequest">
+ <part name="videostreamid" type="xsd:string"/><!-- ns__stoprecord::videostreamid -->
+</message>
+
+<message name="stoprecordResponse">
+ <part name="result" type="ns:result-status"/><!-- ns__stoprecord::result -->
+</message>
+
+<message name="setWriterParamRequest">
+ <part name="capacity" type="xsd:int"/><!-- ns__setWriterParam::capacity -->
+ <part name="writemode" type="xsd:int"/><!-- ns__setWriterParam::writemode -->
+</message>
+
+<message name="setWriterParamResponse">
+ <part name="result" type="ns:result-status"/><!-- ns__setWriterParam::result -->
+</message>
+
+<message name="setBackupRequest">
+ <part name="mode" type="xsd:int"/><!-- ns__setBackup::mode -->
+ <part name="timevalue" type="xsd:int"/><!-- ns__setBackup::timevalue -->
+ <part name="capacityvalue" type="xsd:int"/><!-- ns__setBackup::capacityvalue -->
+</message>
+
+<message name="setBackupResponse">
+ <part name="result" type="ns:result-status"/><!-- ns__setBackup::result -->
+</message>
+
+<portType name="nvrPortType">
+ <operation name="startrecord">
+  <documentation>Service definition of function ns__startrecord</documentation>
+  <input message="tns:startrecordRequest"/>
+  <output message="tns:startrecordResponse"/>
+ </operation>
+ <operation name="stoprecord">
+  <documentation>Service definition of function ns__stoprecord</documentation>
+  <input message="tns:stoprecordRequest"/>
+  <output message="tns:stoprecordResponse"/>
+ </operation>
+ <operation name="setWriterParam">
+  <documentation>Service definition of function ns__setWriterParam</documentation>
+  <input message="tns:setWriterParamRequest"/>
+  <output message="tns:setWriterParamResponse"/>
+ </operation>
+ <operation name="setBackup">
+  <documentation>Service definition of function ns__setBackup</documentation>
+  <input message="tns:setBackupRequest"/>
+  <output message="tns:setBackupResponse"/>
+ </operation>
+</portType>
+
+<binding name="nvr" type="tns:nvrPortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="startrecord">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="stoprecord">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="setWriterParam">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="setBackup">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:nvr" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="nvr">
+ <documentation>- Elcom Network Video Recoder</documentation>
+ <port name="nvr" binding="tns:nvr">
+  <SOAP:address location="http://locahost:4000"/>
+ </port>
+</service>
+
+</definitions>

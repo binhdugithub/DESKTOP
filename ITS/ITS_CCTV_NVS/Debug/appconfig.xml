@@ -1,0 +1,25 @@
+ <?xml version="1.0" encoding="utf-8" ?>
+    <elcom>
+        <cctv>
+	    <general>
+		<database host="192.168.6.149" port="3306" user="its" password="123456" schema="cctv" />
+		<storage storagepath="/home/itscore/workspace/video" />
+	    </general>
+	    <nvr>
+            	<general mode="1" tryconnect="1" />
+            	<network serverport="7000" />
+            	<storage duration="60" video_path="/home/xyz/workspace/video" directory_path="/home" min_capacity="1000" />
+	    </nvr>
+	    <nvrstreaming>
+            	<rtsp serverport="8000" user="" pass="" />
+	    </nvrstreaming>
+	    <proxy>
+            	<general mode="1" tryconnect="1" />
+            	<network serverport="9000" rtsp_port="8554"/>
+	    </proxy>
+	    <nvrservice>
+            	<general debug="true" standalone="true" />
+           	<network nvrserviceport="10000" />
+	    </nvrservice>
+        </cctv>
+    </elcom>

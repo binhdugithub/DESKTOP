@@ -1,0 +1,12 @@
+    <?xml version="1.0" encoding="utf-8" ?>
+    <elcom>
+        <cctv>
+	    <nvrstreaming>
+            <rtsp server_port="8888" user="" pass="" />
+            <storage duration="60" storage_path="/home/devel/workspace/nvr/src/NVR_STREAMER/video/" directory_path="/home" min_capacity="1000" />
+            <database ipserver="localhost" port="3306" user="root" password="ELCOMNVR" schema="nvr" />
+	    </nvrstreaming>
+        </cctv>
+    </elcom>
+
+

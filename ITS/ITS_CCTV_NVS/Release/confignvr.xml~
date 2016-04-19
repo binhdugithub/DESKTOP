@@ -1,0 +1,12 @@
+    <?xml version="1.0" encoding="utf-8" ?>
+    <elcom>
+        <cctv>
+	    <nvrstreaming>
+            <rtsp server_port="4000" user="" pass="" />
+            <storage storage_path="/etc/elcom/nvr/data/video" />
+            <database ipserver="172.16.0.128" port="3306" user="its" password="its123" schema="cctv" />
+	    </nvrstreaming>
+        </cctv>
+    </elcom>
+
+
