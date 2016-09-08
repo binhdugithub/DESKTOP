@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1298524303/QT_PLUGIN_PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1298524303/QT_PLUGIN_PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1298524303/QT_PLUGIN_PATH/value=/opt/Qt5.7.0/5.7/gcc_64/plugins/platforms
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1298524303/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1298524303/appendContributed=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.540342385/PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.540342385/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.540342385/PATH/value=/bin\:/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/usr/games\:/usr/local/games
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.540342385/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.540342385/appendContributed=true
