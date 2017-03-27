@@ -1,0 +1,164 @@
+/*
+    Color define :
+    - blue: #27a9e0
+    - dark: #090408
+    - gray: #303030
+    - light_gray : #6d6d6d
+*/
+
+/*------------------------------- StyleSheet Common -------------------------------*/
+[bg-dark=true]
+{
+    background-color: #090408;
+    color: #FFF;
+}
+
+[bg-primary=true]
+{
+    background-color: #27a9e0;
+    color: #FFF;
+}
+
+[text-parameter=true]
+{
+    color: #27a9e0;
+    font-size: 16px;
+}
+
+[text-input=true]
+{
+    font-size: 18px;
+    qproperty-alignment: 'AlignLeft | AlignVCenter';
+}
+
+/*------------------------------- StyleSheet QToolTip -------------------------------*/
+QToolTip
+{
+    color: #ffffff;
+    background-color: #27a9e0;
+    border: 1px solid #d0d2d3;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 4px;
+}
+
+QPushButton
+{
+    outline: none;
+    min-height: 32px;
+    min-width: 120px;
+    font-size: 14px;
+    background-color: #27a9e0;
+    color: #FFF;
+}
+
+QPushButton:hover
+{
+    background-color: #090408;
+    border: 1px solid #6d6d6d;
+    color: #27a9e0;
+}
+
+QPushButton:disabled
+{
+    background-color: #090408;
+    border: 1px solid #6d6d6d;
+    color: #27a9e0;
+    min-height: 38px;
+}
+
+QCheckBox
+{
+    color: #27a9e0;
+    font-size: 14px;
+}
+
+QLineEdit, QDateEdit, QTimeEdit, QComboBox, QPlainTextEdit
+{
+    outline: none;
+    min-height: 32px;
+    min-width: 300px;
+    font-size: 14px;
+}
+
+QDateEdit::down-button,
+QTimeEdit::down-button,
+QSpinBox::down-button
+{
+    width: 24px;
+    height: 100%;
+    subcontrol-position: center left;
+    border-right: 1px solid black;
+}
+
+QDateEdit::up-button,
+QTimeEdit::up-button,
+QSpinBox::up-button
+{
+    width: 24px;
+    height: 100%;
+    subcontrol-position: center right;
+    border-left: 1px solid black;
+}
+
+QDateEdit::down-arrow,
+QTimeEdit::down-arrow,
+QSpinBox::down-arrow
+{
+    image: url(:/images/icon_button_down_arrow.png);
+}
+
+QDateEdit::up-arrow,
+QTimeEdit::up-arrow,
+QSpinBox::up-arrow
+{
+    image: url(:/images/icon_button_up_arrow.png);
+}
+
+
+QComboBox::drop-down
+{
+    width: 32px;
+    height: 100%;
+    subcontrol-position: center right;
+    border-left: 1px solid black;
+}
+
+QComboBox::down-arrow
+{
+    image: url(:/images/icon_button_down_arrow.png);
+}
+
+QComboBox QAbstractItemView::item
+{
+    min-height: 32px;
+}
+
+/*------------------------------- StyleSheet QTableWidget -------------------------------*/
+/*QTableWidget
+{
+
+    border: 1px solid #27a9e0;
+}
+
+QTableWidget::item
+{
+    padding: 0px;
+    font-size: 12px;
+    border: 1px solid #27a9e0;
+}*/
+
+QHeaderView,
+QHeaderView::section
+{
+    background-color: #303030;
+    color: #27a9e0;
+    font-size: 14px;
+    min-height: 32px;
+}
+
+/*QHeaderView::section
+{
+    color: #27a9e0;
+    border: 1px solid #27a9e0;
+}*/

@@ -1,0 +1,7 @@
+#ifndef DATABASEMODULE
+#define DATABASEMODULE
+
+#include "databasecontroller.h"
+
+#endif // DATABASEMODULE
+

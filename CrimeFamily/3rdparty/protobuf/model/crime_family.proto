@@ -1,0 +1,43 @@
+syntax                                                             	= "proto3";
+
+package com.crime;
+
+option java_package                                                	= "com.crime";
+option java_outer_classname                                        	= "CRIME";
+
+//
+message CaseInfo
+{
+  uint64 id                        									= 1;
+  string name                      									= 2;
+  string timebegin                    								= 3;
+  string timeend													= 4;
+  string description												= 5;
+  string status														= 6;
+  repeated RelationshipInfo relationships  							= 7;
+}
+
+//
+message CrimeInfo
+{
+  uint64 id                        									= 1;
+  string name                      									= 2;
+  string avatar                    									= 3;
+  string profile													= 4;
+  string description												= 5;
+  uint32 visible													= 6;
+  string position													= 7;
+}
+
+//
+message RelationshipInfo
+{
+  uint64 id                        									= 1;
+  uint64 crime_id_1                        							= 2;
+  uint64 crime_id_2                        							= 3;
+  string name                      									= 4;
+  string line_color                    								= 5;
+  string line_type													= 6;
+  uint32 line_size													= 7;
+  uint32 visible													= 8;
+}

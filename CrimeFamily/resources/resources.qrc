@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/icon.png</file>
+        <file>qss/style.css</file>
+        <file>images/icon_button_down_arrow.png</file>
+        <file>images/icon_button_up_arrow.png</file>
+        <file>images/no_avatar.jpg</file>
+    </qresource>
+</RCC>

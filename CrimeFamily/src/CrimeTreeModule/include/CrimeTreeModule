@@ -1,0 +1,8 @@
+#ifndef CRIMETREEMODULE
+#define CRIMETREEMODULE
+
+#include "crimetreecontroller.h"
+#include "casemanagementview.h"
+#include "crimetreeview.h"
+
+#endif // CRIMETREEMODULE
